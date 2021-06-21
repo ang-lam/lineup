@@ -6,7 +6,7 @@ class Job {
     static jobContainer = document.getElementById('job-container')
     static jobTable = document.getElementById('job-table')
 
-    constructor(id, title, company, dateApplied, link, status){
+    constructor({id, title, company, dateApplied, link, status}){
         this.id = id
         this.title = title
         this.company = company

@@ -12,7 +12,11 @@ class JobService{
         fetch(`${this.endpoint}/jobs`)
         .then(resp => resp.json())
         .then(jobs => {
-            debugger
+            for (const job of jobs){
+                const j = new Job(job)
+                j.appendJob()
+                debugger
+            }
         })
     }
 }
