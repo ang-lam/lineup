@@ -5,7 +5,17 @@ class Job {
     static all = []
 
     constructor(id, title, company, dateApplied, link, status){
-        
+        this.id = id
+        this.title = title
+        this.company = company
+        this.dateApplied = dateApplied
+        this.link = link
+        this.status = status
+        //instantiate the object with own element in constructor function
+        //can reference job element with this.__
+        this.element = document.createElement('table')
+        this.element.dataset.id = this.id
+        this.element.id =  `job-${this.id}`
         
         Job.all.push(this) //new instance pushed into all array
     }
