@@ -36,7 +36,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   def destroy
     @job.destroy
-    reder json: {message: 'Job successfully deleted!'}
+    render json: {message: 'Job successfully deleted!'}
   end
 
   private
