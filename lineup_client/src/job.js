@@ -3,7 +3,6 @@ class Job {
     //will need to remove the elements from frontend with a method (filter and remove from array)
     //the all array will be populated/updated with all instances at a refresh
     static all = []
-    static jobContainer = document.getElementById('job-container')
     static jobTable = document.getElementById('job-table')
 
     constructor({id, title, company, dateApplied, link, status}){
@@ -35,8 +34,6 @@ class Job {
     }
 
     appendJob() {
-        const newRow = document.createElement('tr')
-        const filledRow = newRow.appendChild(this.jobHTML())
-        Job.jobContainer.appendChild(filledRow)
+        Job.jobTable.appendChild(this.jobHTML())
     }
 }
