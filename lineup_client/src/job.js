@@ -18,6 +18,8 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
+        this.element.addEventListener('click', this.handleClick)
+    
         
         Job.all.push(this) //new instance pushed into all array
     }
@@ -30,6 +32,7 @@ class Job {
             <td>${this.dateApplied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
+            <td><button id='delete-bttn'>Delete</button>
         `
         return this.element
     }
@@ -50,4 +53,13 @@ class Job {
             </form>
         `
     }
+
+    handleClick() {
+        if (event.target.innerHTML === 'Delete'){
+            jobService.deleteJob()
+        }
+    }
+
+    
+
 }

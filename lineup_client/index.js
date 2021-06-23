@@ -8,5 +8,7 @@ Job.renderForm()
 
 
 function handleSubmit() {
+    event.preventDefault()
     jobService.createJob()
+    event.target.reset()
 }

@@ -36,5 +36,17 @@ class JobService{
             //need to be string to share to server
             //can refactor into instance/class method called gatherJobInput
         }
+        fetch(`${this.endpoint}/jobs`, configJob)
+            .then(resp => resp.json())
+            .then(job => {
+                const j = new Job(job)
+                j.appendJob
+            })
+    }
+
+    
+    deleteJob(){
+        debugger
+        fetch(``)
     }
 }
