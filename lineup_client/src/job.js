@@ -50,7 +50,12 @@ class Job {
                 Comapny: <input type="text" id="company">
                 Date Applied: <input type="date" id="date-applied">
                 Job Link: <input type="text" id="link">
-                Status: <input type="text" id="status">
+                Status: <select id="status">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="In-progress">In-progress</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
                 <input type="submit" id="submit">
             </form>
         `
