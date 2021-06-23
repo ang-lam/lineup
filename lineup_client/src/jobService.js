@@ -45,8 +45,14 @@ class JobService{
     }
 
     
-    deleteJob(){
-        debugger
-        fetch(``)
+    deleteJob(id){
+        fetch(`${this.endpoint}/jobs/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(resp => resp.json())
+            .then(json => alert(json.message))
     }
 }

@@ -54,9 +54,10 @@ class Job {
         `
     }
 
-    handleClick() {
-        if (event.target.innerHTML === 'Delete'){
-            jobService.deleteJob()
+    handleClick = () => {
+        if (event.target.innerText === 'Delete'){
+            this.element.remove()
+            jobService.deleteJob(this.id)
         }
     }
 
