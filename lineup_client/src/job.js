@@ -29,11 +29,13 @@ class Job {
         this.element.innerHTML = `
             <td>${this.title}</td>
             <td>${this.company}</td>
-            <td>${this.dateApplied}</td>
+            <td>${(this.dateApplied === undefined) ? 'Not Applied' : 'Applied'}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
             <td><button id='delete-bttn'>Delete</button>
         `
+        //wirte a function for each column for undefined?
+        //status should be a drop down?
         return this.element
     }
 
