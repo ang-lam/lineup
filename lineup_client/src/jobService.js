@@ -27,6 +27,14 @@ class JobService{
             link: document.getElementById('link').value,
             status: document.getElementById('status').value
         }
-        debugger
+        const configJob = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(job)
+            //need to be string to share to server
+            //can refactor into instance/class method called gatherJobInput
+        }
     }
 }
