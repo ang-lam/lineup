@@ -15,8 +15,18 @@ class JobService{
             for (const job of jobs){
                 const j = new Job(job)
                 j.appendJob()
-                debugger
             }
         })
+    }
+
+    createJob() {
+        const job = {
+            title: document.getElementById('title').value,
+            company: document.getElementById('company').value,
+            dateApplied: document.getElementById('date-applied').value,
+            link: document.getElementById('link').value,
+            status: document.getElementById('status').value
+        }
+        debugger
     }
 }

@@ -4,6 +4,7 @@ class Job {
     //the all array will be populated/updated with all instances at a refresh
     static all = []
     static jobTable = document.getElementById('job-table')
+    static jobForm = document.getElementById('form-container')
 
     constructor({id, title, company, dateApplied, link, status}){
         this.id = id
@@ -35,5 +36,18 @@ class Job {
 
     appendJob() {
         Job.jobTable.appendChild(this.jobHTML())
+    }
+
+    static renderForm() {
+        Job.jobForm.innerHTML += `
+            <form id="new-job-form">
+                Title: <input type="text" id="title">
+                Comapny: <input type="text" id="company">
+                Date Applied: <input type="date" id="date-applied">
+                Job Link: <input type="text" id="link">
+                Status: <input type="text" id="status">
+                <input type="submit" id="submit">
+            </form>
+        `
     }
 }
