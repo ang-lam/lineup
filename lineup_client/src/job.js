@@ -18,7 +18,7 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
-        this.element.addEventListener('click', this.handleClick)
+        this.element.addEventListener('click', this.handleDelete)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -27,7 +27,7 @@ class Job {
     //function is responsible for creating the HTML in each element of an instance
     jobHTML() {
         this.element.innerHTML = `
-            <td>${this.title}</td>
+            <td id="title-column">${this.title}</td>
             <td>${this.company}</td>
             <td>${this.dateApplied}</td>
             <td>${this.link}</td>
@@ -41,6 +41,8 @@ class Job {
 
     appendJob() {
         Job.jobTable.appendChild(this.jobHTML())
+        const titleColumn = document.getElementById('title-column')
+        titleColumn.addEventListener('click', this.handleClick)
     }
 
     static renderForm() {
@@ -61,11 +63,15 @@ class Job {
         `
     }
 
-    handleClick = () => {
+    handleDelete = () => {
         if (event.target.innerText === 'Delete'){
             this.element.remove()
             jobService.deleteJob(this.id)
         }
+    }
+
+    handleClick() {
+        debugger
     }
 
     
