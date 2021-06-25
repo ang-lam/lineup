@@ -29,7 +29,7 @@ class Job {
         this.element.innerHTML = `
             <td>${this.title}</td>
             <td>${this.company}</td>
-            <td>${(this.dateApplied === undefined) ? 'Not Applied' : 'Applied'}</td>
+            <td>${this.dateApplied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
             <td><button id='delete-bttn'>Delete</button>
@@ -48,7 +48,7 @@ class Job {
             <form id="new-job-form">
                 Title: <input type="text" id="title">
                 Comapny: <input type="text" id="company">
-                Date Applied: <input type="date" id="date-applied">
+                Date Applied: <input type="date" id="dateApplied">
                 Job Link: <input type="text" id="link">
                 Status: <select id="status">
                     <option disabled selected value> -- select an option -- </option>
