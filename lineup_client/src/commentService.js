@@ -12,5 +12,10 @@ class CommentService{
             Comment.all.push(comments)
         }))
     }
+
+    createComment() {
+        const comment = {
+        }
+    }
     
 }
