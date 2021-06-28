@@ -78,7 +78,12 @@ class Job {
 
     renderJobDetails = (job) => {
         
-        debugger
+        initializeTable()
+        // Job.jobTable.innerHTML = ''
+        //make a function that customize render of headers?
+        Job.jobTable.append(job)
+    
+        //after this need to append and show comments
     }
 
     
