@@ -70,7 +70,14 @@ class Job {
         }
     }
 
-    handleClick() {
+    handleClick = () => {
+        //render the show page of the job
+        const job = event.target.parentNode
+        this.renderJobDetails(job)
+    }
+
+    renderJobDetails = (job) => {
+        
         debugger
     }
 
