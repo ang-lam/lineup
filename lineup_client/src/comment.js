@@ -25,13 +25,23 @@ class Comment{
         return this.element
     }
 
-    renderComments(job) {
-        //render all comments filtered by job_id
-        if (this.job_id.toString() === job.dataset.id){
-            //render
-            const commentTable = document.getElementById('comment-table')
-            commentTable.appendChild(this.commentHTML())
+    // renderComments(job) {
+    //     //render all comments filtered by job_id
+    //     if (this.job_id.toString() === job.dataset.id){
+    //         //render
+    //         const commentTable = document.getElementById('comment-table')
+    //         commentTable.appendChild(this.commentHTML())
 
+    //     }
+    // }
+
+    static renderComments(job) {
+        
+        //render all comments filtered by job_id
+        const filteredComments = Comment.all.filter(comment => comment.job_id.toString() === job.dataset.id)
+        for (const comment of filteredComments){
+            const commentTable = document.getElementById('comment-table')
+            commentTable.appendChild(comment.commentHTML())
         }
     }
 

@@ -5,13 +5,22 @@ class CommentService{
         this.endpoint = endpoint
     }
 
-    getComments(job) {
+    // getComments(job) {
+    //     fetch(`${this.endpoint}/comments`)
+    //         .then(resp => resp.json()
+    //         .then(comments => {
+    //             for (const comment of comments){
+    //                 const c = new Comment(comment)
+    //                 c.renderComments(job)
+    //             }
+    //     }))
+    // }
+    getComments() {
         fetch(`${this.endpoint}/comments`)
             .then(resp => resp.json()
             .then(comments => {
                 for (const comment of comments){
                     const c = new Comment(comment)
-                    c.renderComments(job)
                 }
         }))
     }
