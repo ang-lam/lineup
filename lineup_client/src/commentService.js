@@ -9,7 +9,10 @@ class CommentService{
         fetch(`${this.endpoint}/comments`)
             .then(resp => resp.json()
             .then(comments => {
-            Comment.all.push(comments)
+                for (const comment of comments){
+                    const c = new Comment(comment)
+                    c.renderComments()
+                }
         }))
     }
 

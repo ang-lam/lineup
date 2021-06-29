@@ -5,7 +5,7 @@ class Comment{
     static commentForm = document.getElementById('comment-form-container')
 
 
-    constructor(id, description, job_id){
+    constructor({id, description, job_id}){
         this.id = id
         this.description = description
         this.job_id = job_id
@@ -26,6 +26,10 @@ class Comment{
     }
 
     renderComments() {
+        // Comment.commentContainer.appendChild(this.commentHTML())
+        //render all comments filtered by job_id
+        debugger
+        Comment.all.filter(comment => comment.job_id === 1)
 
     }
 
