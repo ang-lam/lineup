@@ -85,6 +85,7 @@ class Job {
     
         //after this need to append and show comments
         Comment.renderForm()
+        Job.jobForm.remove()
     }
 
     
