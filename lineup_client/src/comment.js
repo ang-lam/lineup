@@ -26,18 +26,13 @@ class Comment{
     }
 
     renderComments(job) {
-        // Comment.commentContainer.appendChild(this.commentHTML())
         //render all comments filtered by job_id
-        
         if (this.job_id.toString() === job.dataset.id){
             //render
             const commentTable = document.getElementById('comment-table')
             commentTable.appendChild(this.commentHTML())
 
         }
-        // const comments = Comment.all.filter(comment => comment.job_id === 1)
-        // commentTable.append(this.commentHTML)
-
     }
 
     static renderForm() {
