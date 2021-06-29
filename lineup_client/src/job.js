@@ -84,6 +84,7 @@ class Job {
         Job.jobTable.append(job)
     
         //after this need to append and show comments
+        Comment.renderForm()
     }
 
     

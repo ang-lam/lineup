@@ -1,6 +1,9 @@
 class Comment{
 
     static all = []
+    static commentContainer = document.getElementById('comment-container')
+    static commentForm = document.getElementById('comment-form-container')
+
 
     constructor(id, description, job_id){
         this.id = id
@@ -20,5 +23,18 @@ class Comment{
             <td><button id='delete-bttn'>Delete</button>
         `
         return this.element
+    }
+
+    renderComments() {
+
+    }
+
+    static renderForm() {
+        Comment.commentForm.innerHTML = `
+        <form id="new-comment-form">
+                Description: <textarea id="description"></textarea>
+                <input type="submit" id="submit">
+        </form>
+        `
     }
 }
