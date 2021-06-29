@@ -8,7 +8,6 @@ Job.jobForm.addEventListener('submit', handleSubmit)
 initializeTable()
 jobService.getJobs()
 Job.renderForm()
-commentService.getComments()
 
 
 

@@ -77,7 +77,6 @@ class Job {
     }
 
     renderJobDetails = (job) => {
-        
         initializeTable()
         // Job.jobTable.innerHTML = ''
         //make a function that customize render of headers?
@@ -86,6 +85,7 @@ class Job {
         //after this need to append and show comments
         Comment.renderForm()
         Job.jobForm.remove()
+        commentService.getComments(job)
     }
 
     
