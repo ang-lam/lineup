@@ -13,6 +13,7 @@ class Comment{
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `comment-${this.id}`
+        this.element.addEventListener('click', this.handleDelete)
         
         Comment.all.push(this)
     }
@@ -53,4 +54,12 @@ class Comment{
         commentService.createComment()
         event.target.reset()
     }
+
+    handleDelete = () => {
+        if (event.target.innerText === 'Delete'){
+            this.element.remove()
+            commentService.deleteComment(this.id)
+        }
+    }
+    
 }
