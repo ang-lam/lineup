@@ -27,7 +27,7 @@ class Job {
     //function is responsible for creating the HTML in each element of an instance
     jobHTML() {
         this.element.innerHTML = `
-            <td id="title-column">${this.title}</td>
+            <td class="title-column">${this.title}</td>
             <td>${this.company}</td>
             <td>${this.dateApplied}</td>
             <td>${this.link}</td>
@@ -41,8 +41,12 @@ class Job {
 
     appendJob() {
         Job.jobTable.appendChild(this.jobHTML())
-        const titleColumn = document.getElementById('title-column')
-        titleColumn.addEventListener('click', this.handleClick)
+        const titleColumn = document.getElementsByClassName('title-column')
+        for (const job of titleColumn){
+            job.addEventListener('click', this.handleClick)
+        }
+        
+        // titleColumn.addEventListener('click', this.handleClick)
     }
 
     static renderForm() {
