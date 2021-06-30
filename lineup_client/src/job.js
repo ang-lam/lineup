@@ -45,8 +45,6 @@ class Job {
         for (const job of titleColumn){
             job.addEventListener('click', this.handleClick)
         }
-        
-        // titleColumn.addEventListener('click', this.handleClick)
     }
 
     static renderForm() {
@@ -78,6 +76,12 @@ class Job {
         //render the show page of the job
         const job = event.target.parentNode
         this.renderJobDetails(job)
+    }
+
+    static handleSubmit = () => {
+        event.preventDefault()
+        jobService.createJob()
+        event.target.reset()
     }
 
     renderJobDetails = (job) => {
