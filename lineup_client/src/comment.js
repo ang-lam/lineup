@@ -25,6 +25,12 @@ class Comment{
         return this.element
     }
 
+    appendComment = () => {
+        debugger
+        const commentTable = document.getElementById('comment-table')
+        commentTable.appendChild(this.commentHTML())
+    }
+
     static renderComments(job) {
         const filteredComments = Comment.all.filter(comment => comment.job_id.toString() === job.dataset.id)
         for (const comment of filteredComments){
@@ -40,5 +46,11 @@ class Comment{
                 <input type="submit" id="submit">
         </form>
         `
+    }
+
+    static handleSubmit = () => {
+        event.preventDefault()
+        commentService.createComment()
+        event.target.reset()
     }
 }

@@ -17,7 +17,8 @@ class CommentService{
 
     createComment() {
         const comment = {
-            description: document.getElementById('description').value
+            description: document.getElementById('description').value,
+            job_id: Job.jobTable.lastChild.dataset.id
         }
 
         const configComment = {
@@ -26,12 +27,14 @@ class CommentService{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(comment)
+            //need to be string to share to server
+            //can refactor into instance/class method called gatherJobInput
         }
         fetch(`${this.endpoint}/comments`, configComment)
             .then(resp => resp.json())
             .then(comment => {
                 const c = new Comment(comment)
-                j.appendJob()
+                c.appendComment()
             })
     }
     

@@ -3,6 +3,7 @@ const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
 
 Job.jobForm.addEventListener('submit', Job.handleSubmit)
+Comment.commentForm.addEventListener('submit', Comment.handleSubmit)
 //add eventlistener on the title element
 
 initializeTable()
@@ -13,7 +14,7 @@ commentService.getComments()
 
 function initializeTable() {
     Job.jobTable.innerHTML = `
-        <tr>
+        <tr id="table-header">
             <th>Title</th>
             <th>Company</th>
             <th>Date Applied</th>
