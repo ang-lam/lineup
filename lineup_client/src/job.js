@@ -79,7 +79,7 @@ class Job {
         //render object in form for edit
         //grab object from all array
         const job = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
-        debugger
+        Job.jobForm.innerHTML = ''
         event.target.parentNode.innerHTML = `
             <form>
                 <td class="title-column"><input type="text" id="title" value="${job.title}"></td>
@@ -99,6 +99,9 @@ class Job {
         `
 
         //submit for fetch request
+        //create object like create fetch with the values after submit
+        //need to do submit handler (does current submit work?)
+        debugger
 
         //update DOM
         

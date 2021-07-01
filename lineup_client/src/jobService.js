@@ -21,7 +21,6 @@ class JobService{
 
     createJob() {
         // validateJob()
-        debugger
         const job = {
             title: document.getElementById('title').value,
             company: document.getElementById('company').value,
