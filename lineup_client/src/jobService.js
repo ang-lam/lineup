@@ -21,9 +21,7 @@ class JobService{
 
     createJob() {
         // validateJob()
-        if (document.getElementById('date_applied').value === null){
-            document.getElementById('date_applied').value = ''
-        }
+        debugger
         const job = {
             title: document.getElementById('title').value,
             company: document.getElementById('company').value,
@@ -31,7 +29,6 @@ class JobService{
             link: document.getElementById('link').value,
             status: document.getElementById('status').value
         }
-        debugger
  
         const configJob = {
             method: 'POST',
