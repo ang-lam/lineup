@@ -24,7 +24,7 @@ class JobService{
         const job = {
             title: document.getElementById('title').value,
             company: document.getElementById('company').value,
-            dateApplied: document.getElementById('dateApplied').value,
+            date_applied: document.getElementById('date_applied').value,
             link: document.getElementById('link').value,
             status: document.getElementById('status').value
         }

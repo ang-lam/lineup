@@ -6,11 +6,11 @@ class Job {
     static jobTable = document.getElementById('job-table')
     static jobForm = document.getElementById('form-container')
 
-    constructor({id, title, company, dateApplied, link, status}){
+    constructor({id, title, company, date_applied, link, status}){
         this.id = id
         this.title = title
         this.company = company
-        this.dateApplied = dateApplied
+        this.date_applied = date_applied
         this.link = link
         this.status = status
         //instantiate the object with own element in constructor function
@@ -29,7 +29,7 @@ class Job {
         this.element.innerHTML = `
             <td class="title-column">${this.title}</td>
             <td>${this.company}</td>
-            <td>${this.dateApplied}</td>
+            <td>${this.date_applied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
             <button id='delete-bttn'>Delete</button>
@@ -53,7 +53,7 @@ class Job {
             <form id="new-job-form">
                 Title: <input type="text" id="title">
                 Comapny: <input type="text" id="company">
-                Date Applied: <input type="date" id="dateApplied" name="dateApplied">
+                Date Applied: <input type="date" id="date_applied">
                 Job Link: <input type="text" id="link">
                 Status: <select id="status">
                     <option disabled selected value> -- select an option -- </option>
