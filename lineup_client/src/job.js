@@ -18,7 +18,7 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
-        this.element.addEventListener('click', this.handleDelete)
+        this.element.addEventListener('click', this.handleBttn)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -66,20 +66,19 @@ class Job {
         `
     }
 
-    handleDelete = () => {
+    handleBttn = () => {
         if (event.target.innerText === 'Delete'){
             this.element.remove()
             jobService.deleteJob(this.id)
+        } else if (event.target.innerText === 'Edit'){
+            this.handleEdit()
         }
     }
 
-    // static handleEdit = () => {
-    //     debugger
-    //     if (event.target.innerText === 'Edit'){
-    //         this.element.remove()
-    //         jobService.deleteJob(this.id)
-    //     }
-    // }
+    handleEdit = () => {
+        debugger
+        
+    }
 
     handleClick = () => {
         //render the show page of the job
@@ -104,6 +103,10 @@ class Job {
         Job.jobForm.remove()
         // commentService.getComments(job)
         Comment.renderComments(job)
+    }
+
+    addListenerToBttns = () => {
+
     }
 
     
