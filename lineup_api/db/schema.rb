@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_201627) do
+ActiveRecord::Schema.define(version: 2021_07_01_055937) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_201627) do
   create_table "jobs", force: :cascade do |t|
     t.string "company"
     t.string "title"
-    t.date "date_applied"
+    t.string "date_applied"
     t.string "link"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false

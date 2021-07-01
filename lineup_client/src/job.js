@@ -33,6 +33,7 @@ class Job {
             <td>${this.link}</td>
             <td>${this.status}</td>
             <td><button id='delete-bttn'>Delete</button>
+            <td><button id='edit-bttn'>Edit</button>
         `
         //wirte a function for each column for undefined?
         //status should be a drop down?
@@ -71,6 +72,14 @@ class Job {
             jobService.deleteJob(this.id)
         }
     }
+
+    // static handleEdit = () => {
+    //     debugger
+    //     if (event.target.innerText === 'Edit'){
+    //         this.element.remove()
+    //         jobService.deleteJob(this.id)
+    //     }
+    // }
 
     handleClick = () => {
         //render the show page of the job

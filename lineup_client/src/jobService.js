@@ -41,6 +41,7 @@ class JobService{
         fetch(`${this.endpoint}/jobs`, configJob)
             .then(resp => resp.json())
             .then(job => {
+                debugger
                 const j = new Job(job)
                 j.appendJob()
             })
