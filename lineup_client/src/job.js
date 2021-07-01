@@ -78,16 +78,24 @@ class Job {
     handleEdit = () => {
         //render object in form for edit
         //grab object from all array
-        const targetJob = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
+        const job = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
         debugger
         event.target.parentNode.innerHTML = `
-            <td class="title-column">Software Development Engineer</td>
-            <td>Twitch</td>
-            <td>null</td>
-            <td>https://boards.greenhouse.io/twitch/jobs/5282918002?gh_src=0c4ebc182&amp;s=LinkedIn&amp;source=LinkedIn</td>
-            <td>Applied</td>
-            <button id="delete-bttn">Delete</button>
-            <button id="edit-bttn">Edit</button>
+            <form>
+                <td class="title-column"><input type="text" id="title" value="${job.title}"></td>
+                <td><input type="text" id="company" value="${job.company}"></td>
+                <td><input type="date" id="date_applied" value=""></td>
+                <td><input type="text" id="link" value="${job.link}"></td>
+                <td>
+                    <select id="status">
+                        <option disabled selected value> ${job.status} </option>
+                        <option value="In-progress">In-progress</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </td>
+                <input type="submit" id="submit">
+            </form>
         `
 
         //submit for fetch request
