@@ -53,7 +53,7 @@ class Job {
             <form id="new-job-form">
                 Title: <input type="text" id="title">
                 Comapny: <input type="text" id="company">
-                Date Applied: <input type="date" id="dateApplied">
+                Date Applied: <input type="date" id="dateApplied" name="dateApplied">
                 Job Link: <input type="text" id="link">
                 Status: <select id="status">
                     <option disabled selected value> -- select an option -- </option>

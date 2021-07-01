@@ -1,0 +1,10 @@
+#job-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#job-table td, #job-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
