@@ -94,15 +94,22 @@ class Job {
                         <option value="Rejected">Rejected</option>
                     </select>
                 </td>
-                <input type="submit" id="submit">
+                <input type="submit" id="submit-edit">
             </form>
         `
+        const submitBttn = document.getElementById('submit-edit')
+        submitBttn.addEventListener('click', this.handleEditSubmit)
 
         //submit for fetch request
         //create object like create fetch with the values after submit
         //need to do submit handler (does current submit work?)
-        debugger
+        
+    }
 
+    handleEditSubmit = () => {
+        debugger
+        event.preventDefault()
+        jobService.updateJob(this.id)
         //update DOM
         
     }

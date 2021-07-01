@@ -88,12 +88,20 @@ class JobService{
     
     updateJob(id){
 
+        const job = {
+            title: document.getElementById('title').value,
+            company: document.getElementById('company').value,
+            date_applied: document.getElementById('date_applied').value,
+            link: document.getElementById('link').value,
+            status: document.getElementById('status').value
+        }
+
         const configJob = {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(jobdsgagagagagdgdgagaga)
+            body: JSON.stringify(job)
             //need to be string to share to server
             //can refactor into instance/class method called gatherJobInput
         }
