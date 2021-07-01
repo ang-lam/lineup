@@ -86,4 +86,23 @@ class JobService{
             .then(resp => resp.json())
             .then(json => alert(json.message))
     }
+    
+    updateJob(id){
+
+        const configJob = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jobdsgagagagagdgdgagaga)
+            //need to be string to share to server
+            //can refactor into instance/class method called gatherJobInput
+        }
+
+        fetch(`${this.endpoint}/jobs/${id}`, configJob)
+            .then(resp => resp.json())
+            .then(job => {
+                debugger
+            })
+    }
 }
