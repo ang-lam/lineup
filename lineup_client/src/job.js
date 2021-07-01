@@ -32,8 +32,8 @@ class Job {
             <td>${this.dateApplied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
-            <td><button id='delete-bttn'>Delete</button>
-            <td><button id='edit-bttn'>Edit</button>
+            <button id='delete-bttn'>Delete</button>
+            <button id='edit-bttn'>Edit</button>
         `
         //wirte a function for each column for undefined?
         //status should be a drop down?
