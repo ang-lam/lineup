@@ -76,9 +76,10 @@ class Job {
     }
 
     handleEdit = () => {
-        debugger
         //render object in form for edit
         //grab object from all array
+        const targetJob = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
+        debugger
         event.target.parentNode.innerHTML = `
             <td class="title-column">Software Development Engineer</td>
             <td>Twitch</td>
