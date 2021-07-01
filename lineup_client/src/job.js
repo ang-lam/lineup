@@ -77,6 +77,21 @@ class Job {
 
     handleEdit = () => {
         debugger
+        //render object in form for edit
+        //grab object from all array
+        event.target.parentNode.innerHTML = `
+            <td class="title-column">Software Development Engineer</td>
+            <td>Twitch</td>
+            <td>null</td>
+            <td>https://boards.greenhouse.io/twitch/jobs/5282918002?gh_src=0c4ebc182&amp;s=LinkedIn&amp;source=LinkedIn</td>
+            <td>Applied</td>
+            <button id="delete-bttn">Delete</button>
+            <button id="edit-bttn">Edit</button>
+        `
+
+        //submit for fetch request
+
+        //update DOM
         
     }
 

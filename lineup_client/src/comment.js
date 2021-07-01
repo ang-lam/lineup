@@ -27,13 +27,12 @@ class Comment{
     }
 
     appendComment = () => {
-        debugger
         const commentTable = document.getElementById('comment-table')
         commentTable.appendChild(this.commentHTML())
     }
 
     static renderComments(job) {
-        const filteredComments = Comment.all.filter(comment => comment.job_id.toString() === job.dataset.id)
+        const filteredComments = Comment.all.filter(comment => comment.job_id === parseInt(job.dataset.id))
         for (const comment of filteredComments){
             const commentTable = document.getElementById('comment-table')
             commentTable.appendChild(comment.commentHTML())
