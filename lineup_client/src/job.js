@@ -88,7 +88,7 @@ class Job {
                 <td><input type="text" id="link" value="${job.link}"></td>
                 <td>
                     <select id="status">
-                        <option disabled selected value> ${job.status} </option>
+                        <option value="${job.status}">${job.status}</option>
                         <option value="In-progress">In-progress</option>
                         <option value="Applied">Applied</option>
                         <option value="Rejected">Rejected</option>
