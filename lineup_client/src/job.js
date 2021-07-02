@@ -18,7 +18,7 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
-        this.element.addEventListener('click', this.handleBttn)
+        // this.element.addEventListener('click', this.handleBttn)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -72,6 +72,9 @@ class Job {
             jobService.deleteJob(this.id)
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
+        } else if(event.target.innerText === 'Back to All Jobs'){
+            //initialize the main page again and clear out current all array
+            
         }
     }
 
@@ -145,6 +148,10 @@ class Job {
         //add listener to all bttns on application giving all bttns same class
         //get all elements by class and attach eventlistener 
         //('click', handleBttn()) -> back, submit, edit, delete
+        const allBttns = document.getElementsByClassName('button')
+        for (const button of allBttns){
+            button.addEventListener('click', this.handleBttn)
+        }
     }
 
     static renderJobRow = (job, target) => {
