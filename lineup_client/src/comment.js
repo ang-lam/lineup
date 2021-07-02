@@ -59,6 +59,8 @@ class Comment{
             commentService.deleteComment(this.id)
         }
         //make sure all array is being updated
+        const filteredAll = Comment.all.filter(comment => comment.id != this.id)
+        Comment.all = filteredAll
     }
     
 }
