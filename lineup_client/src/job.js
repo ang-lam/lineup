@@ -25,7 +25,7 @@ class Job {
     }
 
     //function is responsible for creating the HTML in each element of an instance
-    jobHTML() {
+    jobHTML = () => {
         this.element.innerHTML = `
             <td class="title-column">${this.title}</td>
             <td>${this.company}</td>
@@ -84,7 +84,7 @@ class Job {
             <form>
                 <td class="title-column"><input type="text" id="title" value="${job.title}"></td>
                 <td><input type="text" id="company" value="${job.company}"></td>
-                <td><input type="date" id="date_applied" value=""></td>
+                <td><input type="date" id="date_applied" value="${job.date_applied}"></td>
                 <td><input type="text" id="link" value="${job.link}"></td>
                 <td>
                     <select id="status">
@@ -106,10 +106,9 @@ class Job {
         
     }
 
-    handleEditSubmit = () => {
-        debugger
-        event.preventDefault()
-        jobService.updateJob(this.id)
+    handleEditSubmit = (target) => {
+        target.preventDefault()
+        jobService.updateJob(this.id, target)
         //update DOM
         
     }
@@ -141,6 +140,19 @@ class Job {
 
     addListenerToBttns = () => {
 
+    }
+
+    static renderJobRow = (job, target) => {
+        debugger
+        target.target.parentNode.innerHTML = `
+            <td class="title-column">${job.title}</td>
+            <td>${job.company}</td>
+            <td>${job.date_applied}</td>
+            <td>${job.link}</td>
+            <td>${job.status}</td>
+            <button id='delete-bttn'>Delete</button>
+            <button id='edit-bttn'>Edit</button>
+        `
     }
 
     

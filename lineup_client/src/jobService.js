@@ -57,7 +57,7 @@ class JobService{
             .then(json => alert(json.message))
     }
     
-    updateJob(id){
+    updateJob(id, target){
 
         const job = {
             title: document.getElementById('title').value,
@@ -81,6 +81,8 @@ class JobService{
             .then(resp => resp.json())
             .then(job => {
                 debugger
+                Job.renderJobRow(job, target)
             })
+
     }
 }
