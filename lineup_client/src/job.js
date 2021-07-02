@@ -115,8 +115,10 @@ class Job {
 
     handleClick = () => {
         //render the show page of the job
+        debugger
         const job = event.target.parentNode
         this.renderJobDetails(job)
+        //replace form with back button
     }
 
     static handleSubmit = () => {
@@ -139,7 +141,7 @@ class Job {
     }
 
     addListenerToBttns = () => {
-
+        //add listener to all bttns on application with if/else
     }
 
     static renderJobRow = (job, target) => {
