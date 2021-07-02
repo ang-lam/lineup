@@ -3,6 +3,7 @@ class Comment{
     static all = []
     static commentContainer = document.getElementById('comment-container')
     static commentForm = document.getElementById('comment-form-container')
+    static commentTable = document.getElementById('comment-table')
 
 
     constructor({id, description, job_id}){
@@ -27,15 +28,14 @@ class Comment{
     }
 
     appendComment = () => {
-        const commentTable = document.getElementById('comment-table')
-        commentTable.appendChild(this.commentHTML())
+        Comment.commentTable.appendChild(this.commentHTML())
     }
 
     static renderComments(job) {
         const filteredComments = Comment.all.filter(comment => comment.job_id === parseInt(job.dataset.id))
         for (const comment of filteredComments){
-            const commentTable = document.getElementById('comment-table')
-            commentTable.appendChild(comment.commentHTML())
+            debugger
+            Comment.commentTable.appendChild(comment.commentHTML())
         }
     }
 

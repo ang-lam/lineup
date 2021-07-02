@@ -40,7 +40,7 @@ class Job {
         return this.element
     }
 
-    appendJob() {
+    appendJob = () => {
         Job.jobTable.appendChild(this.jobHTML())
         const titleColumn = document.getElementsByClassName('title-column')
         for (const job of titleColumn){
@@ -48,7 +48,7 @@ class Job {
         }
     }
 
-    static renderForm() {
+    static renderForm = () => {
         Job.jobForm.innerHTML += `
             <form id="new-job-form">
                 Title: <input type="text" id="title">
@@ -143,6 +143,7 @@ class Job {
         Comment.renderForm()
         Job.jobForm.innerHTML = ''
         renderBackBttn()
+        debugger
         // commentService.getComments(job)
         Comment.renderComments(job)
     }
