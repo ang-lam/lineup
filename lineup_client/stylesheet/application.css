@@ -1,10 +1,10 @@
-#job-table {
+#job-table, #comment-table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#job-table td, #job-table th {
+#job-table td, #job-table th, #comment-table td, #comment-table th {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -19,4 +19,15 @@
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+textarea {
+  width: 50%;
+  height: 80px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
 }
