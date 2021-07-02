@@ -29,6 +29,15 @@ function initializeTable() {
 renderBackBttn = () => {
     const navigation = document.getElementById('navigation')
     navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
+    navigation.addEventListener('click', handleNavigation)
+}
+
+handleNavigation = () => {
+    if (event.target.innerText === 'Back to All Jobs'){
+        initializeTable()
+        jobService.getJobs()
+        Job.renderForm()   
+    }
 }
 
 

@@ -18,7 +18,7 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
-        // this.element.addEventListener('click', this.handleBttn)
+        this.element.addEventListener('click', this.handleBttn)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -74,7 +74,10 @@ class Job {
             this.handleEdit()
         } else if(event.target.innerText === 'Back to All Jobs'){
             //initialize the main page again and clear out current all array
-            
+            Job.all = []
+            initializeTable()
+            jobService.getJobs()
+            Job.renderForm()
         }
     }
 
@@ -118,7 +121,6 @@ class Job {
 
     handleClick = () => {
         //render the show page of the job
-        debugger
         const job = event.target.parentNode
         this.renderJobDetails(job)
         renderBackBttn()
@@ -150,7 +152,7 @@ class Job {
         //('click', handleBttn()) -> back, submit, edit, delete
         const allBttns = document.getElementsByClassName('button')
         for (const button of allBttns){
-            button.addEventListener('click', this.handleBttn)
+            button.addEventListener('click', handleBttn)
         }
     }
 
