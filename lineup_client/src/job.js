@@ -118,6 +118,7 @@ class Job {
         debugger
         const job = event.target.parentNode
         this.renderJobDetails(job)
+        renderBackBttn()
         //replace form with back button
     }
 

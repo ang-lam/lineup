@@ -26,4 +26,9 @@ function initializeTable() {
     `
 }
 
+renderBackBttn = () => {
+    const navigation = document.getElementById('navigation')
+    navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
+}
+
 
