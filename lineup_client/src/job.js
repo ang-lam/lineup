@@ -70,14 +70,9 @@ class Job {
         if (event.target.innerText === 'Delete'){
             this.element.remove()
             jobService.deleteJob(this.id)
+            //update all array
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
-        } else if(event.target.innerText === 'Back to All Jobs'){
-            //initialize the main page again and clear out current all array
-            Job.all = []
-            initializeTable()
-            jobService.getJobs()
-            Job.renderForm()
         }
     }
 

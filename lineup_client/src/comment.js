@@ -58,6 +58,7 @@ class Comment{
             this.element.remove()
             commentService.deleteComment(this.id)
         }
+        //make sure all array is being updated
     }
     
 }

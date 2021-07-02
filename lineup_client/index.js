@@ -35,6 +35,7 @@ renderBackBttn = () => {
 handleNavigation = () => {
     if (event.target.innerText === 'Back to All Jobs'){
         initializeTable()
+        //want to get jobs from all array
         jobService.getJobs()
         Job.renderForm()
         Comment.commentTable.innerHTML = ''
