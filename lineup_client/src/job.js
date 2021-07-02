@@ -70,7 +70,8 @@ class Job {
         if (event.target.innerText === 'Delete'){
             this.element.remove()
             jobService.deleteJob(this.id)
-            //update all array
+            const filteredAll = Job.all.filter(job => job.id != this.id)
+            Job.all = filteredAll
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
         }
