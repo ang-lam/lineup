@@ -37,7 +37,7 @@ handleNavigation = () => {
         initializeTable()
         jobService.getJobs()
         Job.renderForm()
-        Comment.commentContainer.innerHTML = ''
+        Comment.commentTable.innerHTML = ''
         Comment.commentForm.innerHTML = ''
         navigation.innerHTML = ''
     }

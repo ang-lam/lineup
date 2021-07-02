@@ -143,7 +143,6 @@ class Job {
         Comment.renderForm()
         Job.jobForm.innerHTML = ''
         renderBackBttn()
-        debugger
         // commentService.getComments(job)
         Comment.renderComments(job)
     }
@@ -159,7 +158,6 @@ class Job {
     }
 
     static renderJobRow = (job, target) => {
-        debugger
         target.target.parentNode.innerHTML = `
             <td class="title-column">${job.title}</td>
             <td>${job.company}</td>

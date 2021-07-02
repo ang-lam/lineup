@@ -34,7 +34,6 @@ class Comment{
     static renderComments(job) {
         const filteredComments = Comment.all.filter(comment => comment.job_id === parseInt(job.dataset.id))
         for (const comment of filteredComments){
-            debugger
             Comment.commentTable.appendChild(comment.commentHTML())
         }
     }
