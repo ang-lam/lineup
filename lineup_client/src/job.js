@@ -123,7 +123,7 @@ class Job {
         //render the show page of the job
         const job = event.target.parentNode
         this.renderJobDetails(job)
-        renderBackBttn()
+        
         //replace form with back button
     }
 
@@ -141,7 +141,8 @@ class Job {
     
         //after this need to append and show comments
         Comment.renderForm()
-        Job.jobForm.remove()
+        Job.jobForm.innerHTML = ''
+        renderBackBttn()
         // commentService.getComments(job)
         Comment.renderComments(job)
     }

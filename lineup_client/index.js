@@ -1,6 +1,7 @@
 const baseUrl = 'http://127.0.0.1:3000'
 const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
+const navigation = document.getElementById('navigation')
 
 Job.jobForm.addEventListener('submit', Job.handleSubmit)
 Comment.commentForm.addEventListener('submit', Comment.handleSubmit)
@@ -27,7 +28,6 @@ function initializeTable() {
 }
 
 renderBackBttn = () => {
-    const navigation = document.getElementById('navigation')
     navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
     navigation.addEventListener('click', handleNavigation)
 }
@@ -36,7 +36,10 @@ handleNavigation = () => {
     if (event.target.innerText === 'Back to All Jobs'){
         initializeTable()
         jobService.getJobs()
-        Job.renderForm()   
+        Job.renderForm()
+        Comment.commentContainer.innerHTML = ''
+        Comment.commentForm.innerHTML = ''
+        navigation.innerHTML = ''
     }
 }
 
