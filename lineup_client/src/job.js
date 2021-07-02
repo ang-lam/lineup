@@ -142,7 +142,9 @@ class Job {
     }
 
     addListenerToBttns = () => {
-        //add listener to all bttns on application with if/else
+        //add listener to all bttns on application giving all bttns same class
+        //get all elements by class and attach eventlistener 
+        //('click', handleBttn()) -> back, submit, edit, delete
     }
 
     static renderJobRow = (job, target) => {
