@@ -58,13 +58,14 @@ class JobService{
     }
     
     updateJob(id, target){
-
+        const editedJob = target.target.parentNode
+        //might change id to class - not good to have identical id's
         const job = {
-            title: document.getElementById('title').value,
-            company: document.getElementById('company').value,
-            date_applied: document.getElementById('date_applied').value,
-            link: document.getElementById('link').value,
-            status: document.getElementById('status').value
+            title: editedJob.querySelector('#title').value,
+            company: editedJob.querySelector('#company').value,
+            date_applied: editedJob.querySelector('#date_applied').value,
+            link: editedJob.querySelector('#link').value,
+            status: editedJob.querySelector('#status').value
         }
 
         const configJob = {
