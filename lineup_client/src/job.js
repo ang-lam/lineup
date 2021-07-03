@@ -81,7 +81,6 @@ class Job {
         //render object in form for edit
         //grab object from all array
         const job = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
-        Job.jobForm.innerHTML = ''
         event.target.parentNode.innerHTML = `
             <form>
                 <td class="title-column"><input type="text" id="title" value="${job.title}"></td>
