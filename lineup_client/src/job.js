@@ -42,10 +42,11 @@ class Job {
 
     appendJob = () => {
         Job.jobTable.appendChild(this.jobHTML())
-        const titleColumn = document.getElementsByClassName('title-column')
-        for (const job of titleColumn){
-            job.addEventListener('click', this.handleClick)
-        }
+        // this.element.addEventListener('click', this.handleClick)
+        // const titleColumn = document.getElementsByClassName('title-column')
+        // for (const job of titleColumn){
+        //     job.addEventListener('click', this.handleClick)
+        // }
     }
 
     static renderForm = () => {
@@ -74,6 +75,8 @@ class Job {
             Job.all = filteredAll
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
+        } else if (event.target.nodeName === 'TD'){
+            this.handleClick()
         }
     }
 

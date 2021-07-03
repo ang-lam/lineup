@@ -8,18 +8,20 @@ class JobService{
 
     // Read/Index action
     
-    getJobs() {
+    getJobs = () => {
         fetch(`${this.endpoint}/jobs`)
         .then(resp => resp.json())
         .then(jobs => {
             for (const job of jobs){
                 const j = new Job(job)
+                // debugger
+                // j.element.addEventListener('click', this.handleClick)
                 j.appendJob()
             }
         })
     }
 
-    createJob() {
+    createJob = () => {
         // validateJob()
         const job = {
             title: document.getElementById('title').value,
