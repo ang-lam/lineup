@@ -223,9 +223,9 @@ class Job {
     }
 
     static renderAlerts = () => {
+    
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
-        debugger
         //refactor date into index.js?
         const today = new Date();
         const dd = String(today.getDate()).padStart(2, '0');
@@ -243,6 +243,7 @@ class Job {
                 ul.innerHTML += `<li>Application has not been submitted for ${job.title} at ${job.company}.</li>`
             }
         }
+        styleAlerts()
     }
 
     

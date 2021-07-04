@@ -57,4 +57,19 @@ function renderAlertBttn() {
     Job.sidebar.addEventListener('click', Job.renderAlerts)
 }
 
+function addCheckToList(){
+    const list = document.querySelector('ul')
+    list.addEventListener('click', handleCheck)
+}
+
+function handleCheck() {
+    debugger
+    if (event.target.tagName === 'LI') {
+        event.target.classList.toggle('checked')
+    }
+}
+
+function styleAlerts() {
+    addCheckToList()
+}
 
