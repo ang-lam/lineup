@@ -235,6 +235,8 @@ class Job {
             const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             if (daysDiff > 14 && job.status === 'Applied'){
                 Job.sidebar.innerHTML += `<li>It's been two weeks since you've applied to ${job.title} at ${job.company}. Reach out to the company to check on status of application!</li>`
+            }else if (job.date_applied === '' && job.status === 'In-progress'){
+                Job.sidebar.innerHTML += `<li>Application has not been submitted for ${job.title} at ${job.company}.</li>`
             }
         }
     }
