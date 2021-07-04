@@ -1,3 +1,9 @@
+//To DO LIST
+//make back button grab from all array and not do a fetch request
+//check bugs
+//refactor code
+//remove comments
+
 const baseUrl = 'http://127.0.0.1:3000'
 const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
