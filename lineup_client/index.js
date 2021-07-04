@@ -19,7 +19,6 @@ initializeTable()
 jobService.getJobs()
 Job.renderForm()
 commentService.getComments()
-Job.renderAlerts()
 
 
 function initializeTable() {
@@ -33,7 +32,7 @@ function initializeTable() {
         </tr>
     `
 }
-
+ 
 renderBackBttn = () => {
 
     navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
