@@ -9,6 +9,10 @@
     padding: 8px;
 }
 
+#job-table tr {
+  cursor:pointer;
+}
+
 /* #job-table tr:nth-child(even){background-color: #f2f2f2;} */
 
 #job-table tr:hover {background-color: #ddd;}
@@ -51,6 +55,7 @@ button {
   background-color: #d1ebd2;
   border-radius: 12px;
   transition-duration: 0.4s;
+  cursor:pointer;
 }
 
 button:hover {
