@@ -100,3 +100,14 @@ input[type=submit] {
   grid-column: 1;
   grid-row: 1;
 }
+
+.sidenav {
+
+  height: 50%;
+  width: 400px;
+  position: fixed;
+  right: 0;
+  background-color: rgb(212, 212, 212);
+  overflow-x: hidden;
+  padding-top: 0px;
+}
