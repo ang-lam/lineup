@@ -226,8 +226,13 @@ class Job {
         const dd = String(today.getDate()).padStart(2, '0');
         const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         const yyyy = today.getFullYear();
-        const date = yyyy + '/' + mm + '/' + dd;
-        Job.all.map
+        const currentDate = yyyy + '/' + mm + '/' + dd;
+
+        const startDate = Date.parse(currentDate);
+        const endDate = Date.parse("2021-07-05");
+        const timeDiff = endDate - startDate;
+        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        debugger
     }
 
     
