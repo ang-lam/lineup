@@ -77,7 +77,7 @@ class Job {
                 this.element.remove()
                 jobService.deleteJob(this.id)
                 debugger
-                handleNavigation()
+                this.renderAllJobs()
             } else {
                 this.element.remove()
                 jobService.deleteJob(this.id)
@@ -90,6 +90,23 @@ class Job {
         } else if (event.target.nodeName === 'TD'){
             this.handleJobDetails()
         }
+    }
+
+    renderAllJobs = () => {
+        initializeTable()
+        //want to get jobs from all array
+
+        const filteredAll = Job.all.filter(job => job.id != this.id)
+        Job.all = filteredAll
+        for (const job of filteredAll) {
+            job.appendJob()
+        }
+
+        // jobService.getJobs()
+        Job.renderForm()
+        Comment.commentTable.innerHTML = ''
+        Comment.commentForm.innerHTML = ''
+        navigation.innerHTML = ''
     }
 
     handleEdit = () => {

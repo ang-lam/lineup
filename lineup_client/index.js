@@ -42,8 +42,9 @@ renderBackBttn = () => {
 
 handleNavigation = () => {
     initializeTable()
-    //want to get jobs from all array
-    jobService.getJobs()
+    for (const job of Job.all) {
+        job.appendJob()
+    }
     Job.renderForm()
     Comment.commentTable.innerHTML = ''
     Comment.commentForm.innerHTML = ''
