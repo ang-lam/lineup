@@ -19,6 +19,8 @@ class Job {
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
         this.element.addEventListener('click', this.handleBttn)
+        this.element.addEventListener('mouseover', this.handleMouseover)
+        this.element.addEventListener('mouseout', this.handleMouseout)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -32,8 +34,6 @@ class Job {
             <td>${this.date_applied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
-            <button class= 'button' id='edit-bttn'>Edit</button>
-            <button class='button' id='delete-bttn'>Delete</button>
         `
         //wirte a function for each column for undefined?
         //status should be a drop down?
@@ -129,6 +129,23 @@ class Job {
         event.preventDefault()
         jobService.createJob()
         event.target.reset()
+    }
+
+    handleMouseover = () => {
+        event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
+        const buttons = `
+            <button class="button" id="edit-bttn">Edit</button>
+            <button class="button" id="delete-bttn">Delete</button>
+        `
+        event.target.parentNode.innerHTML += buttons
+        
+        
+    }
+
+    handleMouseout = () => {
+        event.target.parentNode.lastElementChild.remove()
+        event.target.parentNode.lastElementChild.remove()
+        event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
     }
 
     renderJobDetails = (job) => {
