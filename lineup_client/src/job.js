@@ -71,12 +71,17 @@ class Job {
     }
 
     handleClick = () => {
+        debugger
         if (event.target.innerText === 'Delete'){
-            debugger
-            this.element.remove()
-            jobService.deleteJob(this.id)
-            const filteredAll = Job.all.filter(job => job.id != this.id)
-            Job.all = filteredAll
+            if (document.querySelectorAll('.title-column').length === 1) {
+                
+            } else {
+                this.element.remove()
+                jobService.deleteJob(this.id)
+                const filteredAll = Job.all.filter(job => job.id != this.id)
+                Job.all = filteredAll
+            }
+            
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
         } else if (event.target.nodeName === 'TD'){

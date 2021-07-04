@@ -35,20 +35,19 @@ function initializeTable() {
 }
 
 renderBackBttn = () => {
+
     navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
-    navigation.addEventListener('click', handleNavigation)
+    navigation.firstElementChild.addEventListener('click', handleNavigation)
 }
 
 handleNavigation = () => {
-    if (event.target.innerText === 'Back to All Jobs'){
-        initializeTable()
-        //want to get jobs from all array
-        jobService.getJobs()
-        Job.renderForm()
-        Comment.commentTable.innerHTML = ''
-        Comment.commentForm.innerHTML = ''
-        navigation.innerHTML = ''
-    }
+    initializeTable()
+    //want to get jobs from all array
+    jobService.getJobs()
+    Job.renderForm()
+    Comment.commentTable.innerHTML = ''
+    Comment.commentForm.innerHTML = ''
+    navigation.innerHTML = ''
 }
 
 
