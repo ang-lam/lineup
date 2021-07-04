@@ -68,3 +68,35 @@ input[type=submit] {
   border-radius: 12px;
   transition-duration: 0.4s;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  grid-gap: 10px;
+}
+
+#form-container {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+
+#job-container {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+
+#comment-form-container {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#comment-container {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+#navigation {
+  grid-column: 1;
+  grid-row: 1;
+}
