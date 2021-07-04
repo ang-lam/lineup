@@ -18,7 +18,7 @@ class Job {
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
-        this.element.addEventListener('click', this.handleBttn)
+        this.element.addEventListener('click', this.handleClick)
         this.element.addEventListener('mouseover', this.handleMouseover)
         this.element.addEventListener('mouseout', this.handleMouseout)
     
@@ -67,7 +67,7 @@ class Job {
         `
     }
 
-    handleBttn = () => {
+    handleClick = () => {
         if (event.target.innerText === 'Delete'){
             this.element.remove()
             jobService.deleteJob(this.id)
@@ -76,7 +76,7 @@ class Job {
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
         } else if (event.target.nodeName === 'TD'){
-            this.handleClick()
+            this.handleJobDetails()
         }
     }
 
@@ -117,7 +117,7 @@ class Job {
         
     }
 
-    handleClick = () => {
+    handleJobDetails = () => {
         //render the show page of the job
         const job = event.target.parentNode
         this.renderJobDetails(job)
