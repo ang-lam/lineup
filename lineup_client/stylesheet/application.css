@@ -76,7 +76,7 @@ input[type=submit] {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
   grid-gap: 10px;
 }
 
@@ -106,11 +106,12 @@ input[type=submit] {
 }
 
 .sidenav {
-
+  grid-column: 4;
+  grid-row: 2 / 8;
   height: 50%;
   width: 400px;
-  position: fixed;
-  right: 0;
+  /* position: fixed;
+  right: 0; */
   background-color: rgb(212, 212, 212);
   overflow-x: hidden;
   padding-top: 0px;
