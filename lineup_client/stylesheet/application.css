@@ -92,27 +92,27 @@ input[type=submit] {
 
 #form-container {
   grid-column: 1 / 4;
-  grid-row: 1;
+  grid-row: 3;
 }
 
 #job-container {
   grid-column: 1 / 4;
-  grid-row: 2;
+  grid-row: 4;
 }
 
 #comment-form-container {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 5;
 }
 
 #comment-container {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 6;
 }
 
 #navigation {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 3;
 }
 
 #sidebar {
@@ -125,4 +125,18 @@ input[type=submit] {
   background-color: rgb(212, 212, 212);
   overflow-x: hidden;
   padding-top: 0px;
+}
+
+.header {
+  /* font-family: 'Courier New', monospace; */
+  font-family: 'Brush Script MT', cursive;
+  position: fixed;
+  height: auto;
+  width: 100%;
+  z-index: 100;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  grid-row: 1;
 }
