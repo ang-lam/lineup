@@ -71,10 +71,13 @@ class Job {
     }
 
     handleClick = () => {
-        debugger
+
         if (event.target.innerText === 'Delete'){
             if (document.querySelectorAll('.title-column').length === 1) {
-                
+                this.element.remove()
+                jobService.deleteJob(this.id)
+                debugger
+                handleNavigation()
             } else {
                 this.element.remove()
                 jobService.deleteJob(this.id)
