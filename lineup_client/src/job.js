@@ -94,6 +94,7 @@ class Job {
 
     renderAllJobs = () => {
         initializeTable()
+        renderAlertBttn
         //want to get jobs from all array
 
         const filteredAll = Job.all.filter(job => job.id != this.id)
@@ -184,6 +185,7 @@ class Job {
     }
 
     renderJobDetails = (job) => {
+        Job.sidebar.innerHTML = ''
         initializeTable()
         // Job.jobTable.innerHTML = ''
         //make a function that customize render of headers?

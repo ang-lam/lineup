@@ -42,6 +42,7 @@ renderBackBttn = () => {
 
 handleNavigation = () => {
     initializeTable()
+    renderAlertBttn()
     for (const job of Job.all) {
         job.appendJob()
     }
