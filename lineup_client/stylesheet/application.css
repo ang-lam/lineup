@@ -69,6 +69,14 @@ button:hover {
   color: white;
 }
 
+#alert-bttn {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 input[type=submit] {
   background-color: #d1ebd2;
   border-radius: 12px;
@@ -108,12 +116,12 @@ input[type=submit] {
 }
 
 #sidebar {
-  grid-column: 4;
-  grid-row: 2 / 8;
-  height: 50%;
+
+  height: 60%;
   width: 400px;
-  /* position: fixed;
-  right: 0; */
+  position: fixed;
+  right: 20px;
+  top: 100px;
   background-color: rgb(212, 212, 212);
   overflow-x: hidden;
   padding-top: 0px;
