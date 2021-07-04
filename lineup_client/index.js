@@ -64,12 +64,24 @@ function addCheckToList(){
 
 function handleCheck() {
     debugger
-    if (event.target.tagName === 'LI') {
+    if (event.target.nodeName === 'LI') {
         event.target.classList.toggle('checked')
+    }
+}
+
+function createCloseButton() {
+    const list = document.getElementsByTagName('li')
+    for (const alert of list){
+        const span = document.createElement('span')
+        const text = document.createTextNode('\u00D7')
+        span.className = 'close'
+        span.appendChild(text)
+        alert.appendChild(span)
     }
 }
 
 function styleAlerts() {
     addCheckToList()
+    createCloseButton()
 }
 
