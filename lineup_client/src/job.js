@@ -5,7 +5,7 @@ class Job {
     static all = []
     static jobTable = document.getElementById('job-table')
     static jobForm = document.getElementById('form-container')
-    static sidebar = document.getElementsByClassName('sidebar')
+    static sidebar = document.getElementById('sidebar')
 
     constructor({id, title, company, date_applied, link, status}){
         this.id = id

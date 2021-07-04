@@ -107,7 +107,7 @@ input[type=submit] {
   grid-row: 1;
 }
 
-.sidenav {
+#sidebar {
   grid-column: 4;
   grid-row: 2 / 8;
   height: 50%;

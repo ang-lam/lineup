@@ -19,6 +19,7 @@ initializeTable()
 jobService.getJobs()
 Job.renderForm()
 commentService.getComments()
+renderAlertBttn()
 
 
 function initializeTable() {
@@ -48,6 +49,11 @@ handleNavigation = () => {
     Comment.commentTable.innerHTML = ''
     Comment.commentForm.innerHTML = ''
     navigation.innerHTML = ''
+}
+
+function renderAlertBttn() {
+    debugger
+    Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
 }
 
 
