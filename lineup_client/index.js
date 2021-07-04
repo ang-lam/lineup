@@ -43,7 +43,9 @@ renderBackBttn = () => {
 handleNavigation = () => {
     initializeTable()
     renderAlertBttn()
-    for (const job of Job.all) {
+    const filteredAll = Job.all.filter(job => job.id != this.id)
+    Job.all = filteredAll
+    for (const job of filteredAll) {
         job.appendJob()
     }
     Job.renderForm()

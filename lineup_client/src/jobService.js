@@ -83,9 +83,11 @@ class JobService{
         fetch(`${this.endpoint}/jobs/${id}`, configJob)
             .then(resp => resp.json())
             .then(job => {
-                debugger
                 Job.renderJobRow(job, target)
-            })
-
+                const filteredAll = Job.all.filter(job => job.id != id)
+                Job.all = filteredAll
+                new Job(job)
+                
+        })
     }
 }
