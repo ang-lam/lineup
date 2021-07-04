@@ -20,8 +20,8 @@ class Job {
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
         this.element.addEventListener('click', this.handleClick)
-        this.element.addEventListener('mouseover', this.handleMouseover)
-        this.element.addEventListener('mouseout', this.handleMouseout)
+        // this.element.addEventListener('mouseover', this.handleMouseover)
+        // this.element.addEventListener('mouseout', this.handleMouseout)
     
         
         Job.all.push(this) //new instance pushed into all array
@@ -35,6 +35,8 @@ class Job {
             <td>${this.date_applied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
+            <button class="button" id="edit-bttn">Edit</button>
+            <button class="button" id="delete-bttn">Delete</button>
         `
         //wirte a function for each column for undefined?
         //status should be a drop down?
@@ -70,6 +72,7 @@ class Job {
 
     handleClick = () => {
         if (event.target.innerText === 'Delete'){
+            debugger
             this.element.remove()
             jobService.deleteJob(this.id)
             const filteredAll = Job.all.filter(job => job.id != this.id)
@@ -170,6 +173,7 @@ class Job {
     }
 
     addListenerToBttns = () => {
+        //can delete?
         //add listener to all bttns on application giving all bttns same class
         //get all elements by class and attach eventlistener 
         //('click', handleBttn()) -> back, submit, edit, delete
@@ -192,7 +196,13 @@ class Job {
     }
 
     static renderAlerts = () => {
-        debugger
+        //refactor date into index.js?
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = today.getFullYear();
+        const date = yyyy + '/' + mm + '/' + dd;
+        Job.all.map
     }
 
     
