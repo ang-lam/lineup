@@ -53,6 +53,7 @@ handleNavigation = () => {
 }
 
 function renderAlertBttn() {
+    Job.sidebar.id = 'sidebar'
     Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
     Job.sidebar.addEventListener('click', Job.renderAlerts)
 }

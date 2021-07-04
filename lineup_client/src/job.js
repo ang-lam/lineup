@@ -94,7 +94,7 @@ class Job {
 
     renderAllJobs = () => {
         initializeTable()
-        renderAlertBttn
+        renderAlertBttn()
         //want to get jobs from all array
 
         const filteredAll = Job.all.filter(job => job.id != this.id)
@@ -149,6 +149,7 @@ class Job {
 
     handleJobDetails = () => {
         //render the show page of the job
+        Job.sidebar.id = 'no-sidebar'
         const job = event.target.parentNode
         this.renderJobDetails(job)
         

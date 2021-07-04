@@ -127,6 +127,10 @@ input[type=submit] {
   padding-top: 0px;
 }
 
+#no-sidebar {
+  display: none;
+}
+
 .header {
   /* font-family: 'Courier New', monospace; */
   font-family: 'Brush Script MT', cursive;
