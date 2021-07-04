@@ -34,9 +34,32 @@ textarea {
 
 select {
   border-radius: 4px;
+  padding: 3px 5px;
 }
 
 input[type=text]:focus {
   border: 3px solid rgb(92, 167, 228);
+  padding: 4px 10px;
   border-radius: 4px;
+}
+
+input[type=text] {
+  padding: 2px 5px;
+}
+
+button {
+  background-color: #d1ebd2;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+input[type=submit] {
+  background-color: #d1ebd2;
+  border-radius: 12px;
+  transition-duration: 0.4s;
 }
