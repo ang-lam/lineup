@@ -143,8 +143,14 @@ class Job {
     }
 
     handleMouseout = () => {
-        event.target.parentNode.lastElementChild.remove()
-        event.target.parentNode.lastElementChild.remove()
+        //remove button elements
+        event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
+
+        // const lastElement = event.target.parentNode.lastElementChild
+        // if (lastElement.nodeName === 'BUTTON'){
+        //     event.target.parentNode.lastElementChild.remove()
+        //     event.target.parentNode.lastElementChild.remove()
+        // }
         event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
     }
 
