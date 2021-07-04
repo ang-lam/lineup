@@ -19,7 +19,6 @@ class JobService{
                 j.appendJob()
             }
         })
-        debugger
     }
 
     createJob = () => {

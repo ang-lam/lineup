@@ -221,15 +221,14 @@ class Job {
     }
 
     static renderAlerts = () => {
+        Job.sidebar.innerHTML = ''
         //refactor date into index.js?
         const today = new Date();
         const dd = String(today.getDate()).padStart(2, '0');
         const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         const yyyy = today.getFullYear();
         const currentDate = yyyy + '/' + mm + '/' + dd;
-        debugger
-        Job.all.map(job => {
-            debugger
+        for (const job of Job.all){
             const startDate = Date.parse(job.date_applied);
             const endDate = Date.parse(currentDate);
             const timeDiff = endDate - startDate;
@@ -237,7 +236,7 @@ class Job {
             if (daysDiff > 14 && job.status === 'Applied'){
                 Job.sidebar.innerHTML += `<h3>It's been two weeks since you've applied to ${job.title} at ${job.company}. Reach out to the company to check on status of application!</h3>`
             }
-        })
+        }
     }
 
     
