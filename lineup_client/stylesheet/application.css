@@ -31,3 +31,12 @@ textarea {
   background-color: #f8f8f8;
   resize: none;
 }
+
+select {
+  border-radius: 4px;
+}
+
+input[type=text]:focus {
+  border: 3px solid rgb(92, 167, 228);
+  border-radius: 4px;
+}
