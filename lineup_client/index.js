@@ -19,6 +19,7 @@ initializeTable()
 jobService.getJobs()
 Job.renderForm()
 commentService.getComments()
+Job.renderAlerts()
 
 
 function initializeTable() {

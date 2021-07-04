@@ -5,6 +5,7 @@ class Job {
     static all = []
     static jobTable = document.getElementById('job-table')
     static jobForm = document.getElementById('form-container')
+    static sidebar = document.getElementsByClassName('sidebar')
 
     constructor({id, title, company, date_applied, link, status}){
         this.id = id
@@ -188,6 +189,10 @@ class Job {
             <button class='button' id='edit-bttn'>Edit</button>
             <button class='button' id='delete-bttn'>Delete</button>
         `
+    }
+
+    static renderAlerts = () => {
+        debugger
     }
 
     
