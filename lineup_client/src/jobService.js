@@ -17,8 +17,7 @@ class JobService{
         })
     }
 
-    createJob = () => {
-        // validateJob()
+    configJob = () => {
         const job = {
             title: document.getElementById('title').value,
             company: document.getElementById('company').value,
@@ -26,7 +25,6 @@ class JobService{
             link: document.getElementById('link').value,
             status: document.getElementById('status').value
         }
- 
         const configJob = {
             method: 'POST',
             headers: {
@@ -36,7 +34,13 @@ class JobService{
             //need to be string to share to server
             //can refactor into instance/class method called gatherJobInput
         }
-        fetch(`${this.endpoint}/jobs`, configJob)
+        return configJob
+    }
+
+    createJob = () => {
+        // validateJob()
+        
+        fetch(`${this.endpoint}/jobs`, this.configJob())
             .then(resp => resp.json())
             .then(job => {
                 const j = new Job(job)
