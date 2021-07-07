@@ -70,10 +70,7 @@ class Job {
             if (document.querySelectorAll('.title-column').length === 1) {
                 this.deleteJobAndRenderAll()
             } else {
-                this.element.remove()
-                jobService.deleteJob(this.id)
-                const filteredAll = Job.all.filter(job => job.id != this.id)
-                Job.all = filteredAll
+                this.deleteOnAllJobsPage()
             }
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
@@ -86,6 +83,13 @@ class Job {
         this.element.remove()
         jobService.deleteJob(this.id)
         this.renderAllJobs()
+    }
+
+    deleteOnAllJobsPage = () => {
+        this.element.remove()
+        jobService.deleteJob(this.id)
+        const filteredAll = Job.all.filter(job => job.id != this.id)
+        Job.all = filteredAll
     }
 
     renderAllJobs = () => {
