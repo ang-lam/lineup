@@ -9,10 +9,8 @@ const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
 const navigation = document.getElementById('navigation')
 
-Comment.commentForm.addEventListener('submit', Comment.handleSubmit)
 Job.jobTable.addEventListener('submit', Job.handleEdit)
 Job.jobTable.addEventListener('submit', Job.handleEditSubmit)
-//add eventlistener on the title element
 
 initializeTable()
 jobService.getJobs()

@@ -44,6 +44,7 @@ class Comment{
                 <input type="submit" id="submit">
         </form>
         `
+        Comment.commentForm.addEventListener('submit', Comment.handleSubmit)
     }
 
     static handleSubmit = () => {
