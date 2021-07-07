@@ -40,8 +40,6 @@ class JobService{
     }
 
     createJob = () => {
-        // validateJob()
-        
         fetch(`${this.endpoint}/jobs`, this.configJob('POST', this.jobObject()))
             .then(resp => resp.json())
             .then(job => {

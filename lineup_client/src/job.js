@@ -145,42 +145,36 @@ class Job {
         event.target.reset()
     }
 
-    handleMouseover = () => {
-        event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
-        const buttons = `
-            <button class="button" id="edit-bttn">Edit</button>
-            <button class="button" id="delete-bttn">Delete</button>
-        `
-        event.target.parentNode.innerHTML += buttons
+    // handleMouseover = () => {
+    //     event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
+    //     const buttons = `
+    //         <button class="button" id="edit-bttn">Edit</button>
+    //         <button class="button" id="delete-bttn">Delete</button>
+    //     `
+    //     event.target.parentNode.innerHTML += buttons
         
         
-    }
+    // }
 
-    handleMouseout = () => {
-        //remove button elements
-        event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
+    // handleMouseout = () => {
+    //     //remove button elements
+    //     event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
 
-        // const lastElement = event.target.parentNode.lastElementChild
-        // if (lastElement.nodeName === 'BUTTON'){
-        //     event.target.parentNode.lastElementChild.remove()
-        //     event.target.parentNode.lastElementChild.remove()
-        // }
-        event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
-    }
+    //     // const lastElement = event.target.parentNode.lastElementChild
+    //     // if (lastElement.nodeName === 'BUTTON'){
+    //     //     event.target.parentNode.lastElementChild.remove()
+    //     //     event.target.parentNode.lastElementChild.remove()
+    //     // }
+    //     event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
+    // }
 
     renderJobDetails = (job) => {
-        Job.sidebar.innerHTML = ''
         initializeTable()
-        // Job.jobTable.innerHTML = ''
-        //make a function that customize render of headers?
         Job.jobTable.append(job)
-    
-        //after this need to append and show comments
         Comment.renderForm()
+        Comment.renderComments(job)
         Job.jobForm.innerHTML = ''
         renderBackBttn()
-        // commentService.getComments(job)
-        Comment.renderComments(job)
     }
 
     addListenerToBttns = () => {
