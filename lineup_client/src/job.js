@@ -66,19 +66,15 @@ class Job {
     }
 
     handleClick = () => {
-
         if (event.target.innerText === 'Delete'){
             if (document.querySelectorAll('.title-column').length === 1) {
-                this.element.remove()
-                jobService.deleteJob(this.id)
-                this.renderAllJobs()
+                this.deleteJobAndRenderAll()
             } else {
                 this.element.remove()
                 jobService.deleteJob(this.id)
                 const filteredAll = Job.all.filter(job => job.id != this.id)
                 Job.all = filteredAll
             }
-            
         } else if (event.target.innerText === 'Edit'){
             this.handleEdit()
         } else if (event.target.nodeName === 'TD'){
@@ -86,10 +82,16 @@ class Job {
         }
     }
 
+    deleteJobAndRenderAll = () => {
+        this.element.remove()
+        jobService.deleteJob(this.id)
+        this.renderAllJobs()
+    }
+
     renderAllJobs = () => {
         initializeTable()
         renderAlertBttn()
-        for (const job of filteredAll) {
+        for (const job of Job.all) {
             job.appendJob()
         }
         Job.renderForm()

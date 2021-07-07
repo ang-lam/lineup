@@ -59,6 +59,8 @@ class JobService{
         })
             .then(resp => resp.json())
             .then(json => alert(json.message))
+        const filteredAll = Job.all.filter(job => job.id != id)
+        Job.all = filteredAll
     }
     
     updateJob(id, target){
