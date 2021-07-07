@@ -14,12 +14,11 @@ class CommentService{
         }))
     }
 
-    createComment() {
+    configComment = () => {
         const comment = {
             description: document.getElementById('description').value,
             job_id: Job.jobTable.lastChild.dataset.id
         }
-
         const configComment = {
             method: 'POST',
             headers: {
@@ -27,7 +26,11 @@ class CommentService{
             },
             body: JSON.stringify(comment)
         }
-        fetch(`${this.endpoint}/comments`, configComment)
+        return configComment
+    }
+ 
+    createComment() {
+        fetch(`${this.endpoint}/comments`, this.configComment())
             .then(resp => resp.json())
             .then(comment => {
                 const c = new Comment(comment)
@@ -45,5 +48,4 @@ class CommentService{
             .then(resp => resp.json())
             .then(json => alert(json.message))
     }
-    
 }
