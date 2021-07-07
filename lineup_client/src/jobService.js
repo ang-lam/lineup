@@ -28,16 +28,13 @@ class JobService{
         return job
     }
 
-    configJob = () => {
-        
+    configJob = (method) => { 
         const configJob = {
-            method: 'POST',
+            method: method,
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(this.jobObject())
-            //need to be string to share to server
-            //can refactor into instance/class method called gatherJobInput
         }
         return configJob
     }
@@ -45,7 +42,7 @@ class JobService{
     createJob = () => {
         // validateJob()
         
-        fetch(`${this.endpoint}/jobs`, this.configJob())
+        fetch(`${this.endpoint}/jobs`, this.configJob('POST'))
             .then(resp => resp.json())
             .then(job => {
                 const j = new Job(job)
