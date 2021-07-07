@@ -14,8 +14,6 @@ class Job {
         this.date_applied = date_applied
         this.link = link
         this.status = status
-        //instantiate the object with own element in constructor function
-        //can reference job element with this.__
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
@@ -23,8 +21,7 @@ class Job {
         // this.element.addEventListener('mouseover', this.handleMouseover)
         // this.element.addEventListener('mouseout', this.handleMouseout)
     
-        
-        Job.all.push(this) //new instance pushed into all array
+        Job.all.push(this)
     }
 
     //function is responsible for creating the HTML in each element of an instance
@@ -38,8 +35,6 @@ class Job {
             <button class="button" id="edit-bttn">Edit</button>
             <button class="button" id="delete-bttn">Delete</button>
         `
-        //wirte a function for each column for undefined?
-        //status should be a drop down?
         return this.element
     }
 
@@ -104,8 +99,6 @@ class Job {
     }
 
     handleEdit = () => {
-        //render object in form for edit
-        //grab object from all array
         const job = Job.all.find(job => job.id === parseInt(event.target.parentNode.dataset.id))
         event.target.parentNode.innerHTML = `
             <form>
@@ -136,19 +129,12 @@ class Job {
     handleEditSubmit = (target) => {
         target.preventDefault()
         jobService.updateJob(this.id, target)
-  
-
-        //update DOM
-        
     }
 
     handleJobDetails = () => {
-        //render the show page of the job
         Job.sidebar.id = 'no-sidebar'
         const job = event.target.parentNode
         this.renderJobDetails(job)
-        
-        //replace form with back button
     }
 
     static handleSubmit = () => {
