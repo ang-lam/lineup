@@ -5,8 +5,6 @@ class JobService{
     constructor(endpoint){
         this.endpoint = endpoint
     }
-
-    // Read/Index action
     
     getJobs = () => {
         fetch(`${this.endpoint}/jobs`)
@@ -14,8 +12,6 @@ class JobService{
         .then(jobs => {
             for (const job of jobs){
                 const j = new Job(job)
-                // debugger
-                // j.element.addEventListener('click', this.handleClick)
                 j.appendJob()
             }
         })
