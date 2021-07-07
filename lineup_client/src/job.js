@@ -124,17 +124,12 @@ class Job {
             </form>
         `
         const submitBttn = document.getElementById('submit-edit')
-        submitBttn.addEventListener('click', this.handleEditSubmit)
-
-        //submit for fetch request
-        //create object like create fetch with the values after submit
-        //need to do submit handler (does current submit work?)
-        
+        submitBttn.addEventListener('click', this.handleEditSubmit)   
     }
 
-    handleEditSubmit = (target) => {
-        target.preventDefault()
-        jobService.updateJob(this.id, target)
+    handleEditSubmit = () => {
+        event.preventDefault()
+        jobService.updateJob(this.id, event)
     }
 
     handleJobDetails = () => {

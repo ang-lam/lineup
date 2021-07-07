@@ -63,8 +63,8 @@ class JobService{
         Job.all = filteredAll
     }
     
-    updateJob(id, target){
-        const editedJob = target.target.parentNode
+    updateJob(id, event){
+        const editedJob = event.target.parentNode
         //might change id to class - not good to have identical id's
         const job = {
             title: editedJob.querySelector('#title').value,
@@ -77,7 +77,7 @@ class JobService{
         fetch(`${this.endpoint}/jobs/${id}`, this.configJob('PATCH', job))
             .then(resp => resp.json())
             .then(job => {
-                Job.renderJobRow(job, target)
+                Job.renderJobRow(job, event)
                 const filteredAll = Job.all.filter(job => job.id != id)
                 Job.all = filteredAll
                 new Job(job)          
