@@ -63,6 +63,7 @@ class Job {
                 <input type="submit" id="submit">
             </form>
         `
+        Job.jobForm.addEventListener('submit', Job.handleSubmit)
     }
 
     handleClick = () => {
