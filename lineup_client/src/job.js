@@ -192,15 +192,9 @@ class Job {
         Job.sidebar.id = 'sidebar'
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
-        //refactor date into index.js?
-        const today = new Date();
-        const dd = String(today.getDate()).padStart(2, '0');
-        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        const yyyy = today.getFullYear();
-        const currentDate = yyyy + '/' + mm + '/' + dd;
         for (const job of Job.all){
             const startDate = Date.parse(job.date_applied);
-            const endDate = Date.parse(currentDate);
+            const endDate = Date.parse(currentDate());
             const timeDiff = endDate - startDate;
             const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             if (daysDiff > 14 && job.status === 'Applied'){

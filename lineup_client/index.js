@@ -51,6 +51,15 @@ handleNavigation = () => {
     navigation.innerHTML = ''
 }
 
+currentDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    const currentDate = yyyy + '/' + mm + '/' + dd;
+    return currentDate
+}
+
 // function renderAlertBttn() {
 //     Job.sidebar.id = 'sidebar'
 //     Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
