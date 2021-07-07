@@ -1,4 +1,3 @@
-// responsible for fetch requests
 class CommentService{
     
     constructor(endpoint){
@@ -27,8 +26,6 @@ class CommentService{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(comment)
-            //need to be string to share to server
-            //can refactor into instance/class method called gatherJobInput
         }
         fetch(`${this.endpoint}/comments`, configComment)
             .then(resp => resp.json())
