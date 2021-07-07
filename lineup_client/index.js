@@ -16,7 +16,7 @@ initializeTable()
 jobService.getJobs()
 Job.renderForm()
 commentService.getComments()
-renderAlertBttn()
+// renderAlertBttn()
 
 
 function initializeTable() {
@@ -39,7 +39,7 @@ renderBackBttn = () => {
 
 handleNavigation = () => {
     initializeTable()
-    renderAlertBttn()
+    Job.renderAlerts()
     const filteredAll = Job.all.filter(job => job.id != this.id)
     Job.all = filteredAll
     for (const job of filteredAll) {
@@ -51,11 +51,11 @@ handleNavigation = () => {
     navigation.innerHTML = ''
 }
 
-function renderAlertBttn() {
-    Job.sidebar.id = 'sidebar'
-    Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
-    Job.sidebar.addEventListener('click', Job.renderAlerts)
-}
+// function renderAlertBttn() {
+//     Job.sidebar.id = 'sidebar'
+//     Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
+//     Job.sidebar.addEventListener('click', Job.renderAlerts)
+// }
 
 // function addCheckToList(){
 //     const list = document.querySelector('ul')

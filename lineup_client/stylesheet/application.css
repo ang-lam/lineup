@@ -122,7 +122,6 @@ input[type=submit] {
   position: fixed;
   right: 20px;
   top: 250px;
-  background-color: rgb(212, 212, 212);
   overflow-x: hidden;
   padding-top: 0px;
 }

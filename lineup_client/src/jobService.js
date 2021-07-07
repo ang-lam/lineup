@@ -14,7 +14,9 @@ class JobService{
                 const j = new Job(job)
                 j.appendJob()
             }
+            Job.renderAlerts()
         })
+        
     }
 
     jobObject = () => {
@@ -57,7 +59,7 @@ class JobService{
         })
             .then(resp => resp.json())
             .then(json => alert(json.message))
-            
+
         Job.removeJobFromAllArray(id)
     }
     

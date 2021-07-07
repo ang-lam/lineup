@@ -189,7 +189,7 @@ class Job {
     }
 
     static renderAlerts = () => {
-    
+        Job.sidebar.id = 'sidebar'
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
         //refactor date into index.js?
