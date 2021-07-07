@@ -57,8 +57,8 @@ class JobService{
         })
             .then(resp => resp.json())
             .then(json => alert(json.message))
-        const filteredAll = Job.all.filter(job => job.id != id)
-        Job.all = filteredAll
+            
+        Job.removeJobFromAllArray(id)
     }
     
     updateJob(id, event){
@@ -76,8 +76,7 @@ class JobService{
             .then(resp => resp.json())
             .then(job => {
                 Job.renderJobRow(job, event)
-                const filteredAll = Job.all.filter(job => job.id != id)
-                Job.all = filteredAll
+                Job.removeJobFromAllArray(id)
                 new Job(job)          
         })
     }

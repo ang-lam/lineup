@@ -89,8 +89,7 @@ class Job {
     deleteOnAllJobsPage = () => {
         this.element.remove()
         jobService.deleteJob(this.id)
-        const filteredAll = Job.all.filter(job => job.id != this.id)
-        Job.all = filteredAll
+        Job.removeJobFromAllArray(this.id)
     }
 
     renderAllJobs = () => {
@@ -213,6 +212,11 @@ class Job {
         // styleAlerts()
     }
 
+    static removeJobFromAllArray = (jobId) => {
+        const filteredAll = Job.all.filter(job => job.id != jobId)
+        Job.all = filteredAll
+    }
+ 
     
 
 }
