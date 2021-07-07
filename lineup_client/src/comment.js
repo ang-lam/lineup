@@ -10,7 +10,6 @@ class Comment{
         this.id = id
         this.description = description
         this.job_id = job_id
-        //row in table 
         this.element = document.createElement('tr')
         this.element.dataset.id = this.id
         this.element.id =  `comment-${this.id}`
