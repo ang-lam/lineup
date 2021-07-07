@@ -188,11 +188,11 @@ class Job {
         `
     }
 
-    static renderAlerts = () => {
+    static renderAlerts = (jobs) => {
         Job.sidebar.id = 'sidebar'
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
-        for (const job of Job.all){
+        for (const job of jobs){
             const startDate = Date.parse(job.date_applied);
             const endDate = Date.parse(currentDate());
             const timeDiff = endDate - startDate;
@@ -204,6 +204,10 @@ class Job {
             }
         }
         styleAlerts()
+    }
+
+    static setAllJobs = () => {
+
     }
 
     static removeJobFromAllArray = (jobId) => {

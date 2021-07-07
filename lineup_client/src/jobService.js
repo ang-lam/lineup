@@ -14,7 +14,7 @@ class JobService{
                 const j = new Job(job)
                 j.appendJob()
             }
-            Job.renderAlerts()
+            Job.renderAlerts(Job.all)
         })
         
     }
