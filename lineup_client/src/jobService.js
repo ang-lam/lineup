@@ -17,7 +17,7 @@ class JobService{
         })
     }
 
-    configJob = () => {
+    jobObject = () => {
         const job = {
             title: document.getElementById('title').value,
             company: document.getElementById('company').value,
@@ -25,12 +25,17 @@ class JobService{
             link: document.getElementById('link').value,
             status: document.getElementById('status').value
         }
+        return job
+    }
+
+    configJob = () => {
+        
         const configJob = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(job)
+            body: JSON.stringify(this.jobObject())
             //need to be string to share to server
             //can refactor into instance/class method called gatherJobInput
         }
