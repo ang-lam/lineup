@@ -177,17 +177,6 @@ class Job {
         renderBackBttn()
     }
 
-    addListenerToBttns = () => {
-        //can delete?
-        //add listener to all bttns on application giving all bttns same class
-        //get all elements by class and attach eventlistener 
-        //('click', handleBttn()) -> back, submit, edit, delete
-        const allBttns = document.getElementsByClassName('button')
-        for (const button of allBttns){
-            button.addEventListener('click', handleBttn)
-        }
-    }
-
     static renderJobRow = (job, target) => {
         target.target.parentNode.innerHTML = `
             <td class="title-column">${job.title}</td>
