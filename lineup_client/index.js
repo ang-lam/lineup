@@ -78,33 +78,33 @@ currentDate = () => {
 //     }
 // }
 
-// function createCloseButton() {
-//     const list = document.getElementsByTagName('li')
-//     for (const alert of list){
-//         const span = document.createElement('span')
-//         const text = document.createTextNode('\u00D7')
-//         span.className = 'close'
-//         span.appendChild(text)
-//         alert.appendChild(span)
-//     }
-// }
+function createCloseButton() {
+    const list = document.getElementsByTagName('li')
+    for (const alert of list){
+        const span = document.createElement('span')
+        const text = document.createTextNode('\u00D7')
+        span.className = 'close'
+        span.appendChild(text)
+        alert.appendChild(span)
+    }
+}
 
-// function removeAlert() {
-//     const close = document.getElementsByClassName('close')
-//     for (const bttn of close) {
-//         bttn.addEventListener('click', handleClose)
-//     }
-// }
+function removeAlert() {
+    const close = document.getElementsByClassName('close')
+    for (const bttn of close) {
+        bttn.addEventListener('click', handleClose)
+    }
+}
 
-// function handleClose() {
-//     debugger
-//     const div = this.parentElement
-//     div.style.display = 'none'
-// }
+function handleClose() {
+    debugger
+    const div = this.parentElement
+    div.style.display = 'none'
+}
 
-// function styleAlerts() {
-//     // addCheckToList()
-//     createCloseButton()
-//     removeAlert()
-// }
+styleAlerts = () => {
+    // addCheckToList()
+    createCloseButton()
+    removeAlert()
+}
 

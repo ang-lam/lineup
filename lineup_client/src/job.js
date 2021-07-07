@@ -203,7 +203,7 @@ class Job {
                 ul.innerHTML += `<li>Application has not been submitted for ${job.title} at ${job.company}.</li>`
             }
         }
-        // styleAlerts()
+        styleAlerts()
     }
 
     static removeJobFromAllArray = (jobId) => {
