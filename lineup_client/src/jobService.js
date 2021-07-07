@@ -28,13 +28,13 @@ class JobService{
         return job
     }
 
-    configJob = (method) => { 
+    configJob = (method, job) => { 
         const configJob = {
             method: method,
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(this.jobObject())
+            body: JSON.stringify(job)
         }
         return configJob
     }
@@ -42,7 +42,7 @@ class JobService{
     createJob = () => {
         // validateJob()
         
-        fetch(`${this.endpoint}/jobs`, this.configJob('POST'))
+        fetch(`${this.endpoint}/jobs`, this.configJob('POST', this.jobObject()))
             .then(resp => resp.json())
             .then(job => {
                 const j = new Job(job)
@@ -72,24 +72,13 @@ class JobService{
             status: editedJob.querySelector('#status').value
         }
 
-        const configJob = {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(job)
-            //need to be string to share to server
-            //can refactor into instance/class method called gatherJobInput
-        }
-
-        fetch(`${this.endpoint}/jobs/${id}`, configJob)
+        fetch(`${this.endpoint}/jobs/${id}`, this.configJob('PATCH', job))
             .then(resp => resp.json())
             .then(job => {
                 Job.renderJobRow(job, target)
                 const filteredAll = Job.all.filter(job => job.id != id)
                 Job.all = filteredAll
-                new Job(job)
-                
+                new Job(job)          
         })
     }
 }
