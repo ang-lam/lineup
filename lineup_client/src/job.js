@@ -3,6 +3,7 @@ class Job {
     //will need to remove the elements from frontend with a method (filter and remove from array)
     //the all array will be populated/updated with all instances at a refresh
     static all = []
+    static allForAlerts = []
     static jobTable = document.getElementById('job-table')
     static jobForm = document.getElementById('form-container')
     static sidebar = document.getElementById('sidebar')
@@ -188,11 +189,11 @@ class Job {
         `
     }
 
-    static renderAlerts = (jobs) => {
+    static renderAlerts = () => {
         Job.sidebar.id = 'sidebar'
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
-        for (const job of jobs){
+        for (const job of Job.allForAlerts){
             const startDate = Date.parse(job.date_applied);
             const endDate = Date.parse(currentDate());
             const timeDiff = endDate - startDate;
@@ -206,8 +207,8 @@ class Job {
         styleAlerts()
     }
 
-    static setAllJobs = () => {
-
+    static setAlertArray = () => {
+        Job.allForAlerts = Job.all
     }
 
     static removeJobFromAllArray = (jobId) => {
