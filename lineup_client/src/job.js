@@ -23,6 +23,7 @@ class Job {
         // this.element.addEventListener('mouseout', this.handleMouseout)
     
         Job.all.push(this)
+        Job.allForAlerts.push(this)
     }
 
     //function is responsible for creating the HTML in each element of an instance
@@ -189,11 +190,11 @@ class Job {
         `
     }
 
-    static renderAlerts = () => {
+    static renderAlerts = (jobs) => {
         Job.sidebar.id = 'sidebar'
         Job.sidebar.innerHTML = '<ul></ul>'
         const ul = Job.sidebar.firstElementChild
-        for (const job of Job.allForAlerts){
+        for (const job of jobs){
             const startDate = Date.parse(job.date_applied);
             const endDate = Date.parse(currentDate());
             const timeDiff = endDate - startDate;
@@ -206,11 +207,7 @@ class Job {
         }
         styleAlerts()
     }
-
-    static setAlertArray = () => {
-        Job.allForAlerts = Job.all
-    }
-
+    
     static removeJobFromAllArray = (jobId) => {
         const filteredAll = Job.all.filter(job => job.id != jobId)
         Job.all = filteredAll
