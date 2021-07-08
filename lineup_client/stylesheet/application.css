@@ -158,6 +158,7 @@ ul li {
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
+  padding-right: 40px;
 
   /* make the list items unselectable */
   -webkit-user-select: none;
@@ -176,7 +177,7 @@ ul li:hover {
   background: #ddd;
 }
 
-/* When clicked on, add a background color and strike out text */
+/* When clicked on, add a background color and strike out text
 ul li.checked {
   background: #888;
   color: #fff;
@@ -184,7 +185,7 @@ ul li.checked {
 }
 
 /* Add a "checked" mark when clicked on */
-ul li.checked::before {
+/* ul li.checked::before {
   content: '';
   position: absolute;
   border-color: #fff;
@@ -195,8 +196,7 @@ ul li.checked::before {
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
-}
-
+} */ 
 /* Style the close button */
 .close {
   position: absolute;
