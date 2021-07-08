@@ -207,10 +207,16 @@ class Job {
         }
         styleAlerts()
     }
-    
+
     static removeJobFromAllArray = (jobId) => {
         const filteredAll = Job.all.filter(job => job.id != jobId)
         Job.all = filteredAll
+    }
+
+    static removeJobFromAlerts = (job) => {
+        debugger
+        const notClickedAlerts = Job.allForAlerts.filter(j => j.id != job.dataset.id)
+        Job.allForAlerts = notClickedAlerts
     }
  
     

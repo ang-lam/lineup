@@ -39,7 +39,7 @@ renderBackBttn = () => {
 
 handleNavigation = () => {
     initializeTable()
-    Job.renderAlerts()
+    Job.renderAlerts(Job.allForAlerts)
     //renderAlerts with parameter of alert array
     const filteredAll = Job.all.filter(job => job.id != this.id)
     Job.all = filteredAll
@@ -84,6 +84,7 @@ function handleClose() {
     const li = this.parentElement
     li.style.display = 'none'
     //need function to remove job from alert array
+    Job.removeJobFromAlerts(li)
 }
 
 styleAlerts = () => {
