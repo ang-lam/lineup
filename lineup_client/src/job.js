@@ -199,9 +199,9 @@ class Job {
             const timeDiff = endDate - startDate;
             const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             if (daysDiff > 14 && job.status === 'Applied'){
-                ul.innerHTML += `<li>It's been two weeks since you've applied to ${job.title} at ${job.company}. Reach out to the company to check on status of application!</li>`
+                ul.innerHTML += `<li data-id='${job.id}'>It's been two weeks since you've applied to ${job.title} at ${job.company}. Reach out to the company to check on status of application!</li>`
             }else if (job.date_applied === '' && job.status === 'In-progress'){
-                ul.innerHTML += `<li>Application has not been submitted for ${job.title} at ${job.company}.</li>`
+                ul.innerHTML += `<li data-id='${job.id}'>Application has not been submitted for ${job.title} at ${job.company}.</li>`
             }
         }
         styleAlerts()

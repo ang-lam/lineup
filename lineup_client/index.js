@@ -60,24 +60,6 @@ currentDate = () => {
     return currentDate
 }
 
-// function renderAlertBttn() {
-//     Job.sidebar.id = 'sidebar'
-//     Job.sidebar.innerHTML = `<button id='alert-bttn'>View Alerts</button>`
-//     Job.sidebar.addEventListener('click', Job.renderAlerts)
-// }
-
-// function addCheckToList(){
-//     const list = document.querySelector('ul')
-//     list.addEventListener('click', handleCheck)
-// }
-
-// function handleCheck() {
-//     debugger
-//     if (event.target.nodeName === 'LI') {
-//         event.target.classList.toggle('checked')
-//     }
-// }
-
 function createCloseButton() {
     const list = document.getElementsByTagName('li')
     for (const alert of list){
@@ -98,12 +80,11 @@ function removeAlert() {
 
 function handleClose() {
     debugger
-    const div = this.parentElement
-    div.style.display = 'none'
+    const li = this.parentElement
+    li.style.display = 'none'
 }
 
 styleAlerts = () => {
-    // addCheckToList()
     createCloseButton()
     removeAlert()
 }
