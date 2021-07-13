@@ -80,7 +80,6 @@ function removeAlert() {
 }
 
 function handleClose() {
-    debugger
     const li = this.parentElement
     li.style.display = 'none'
     //need function to remove job from alert array
