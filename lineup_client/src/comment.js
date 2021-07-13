@@ -49,7 +49,11 @@ class Comment{
 
     static handleSubmit = () => {
         event.preventDefault()
-        commentService.createComment()
+        if (document.getElementById('description').value === ''){
+            alert('Description cannot be empty!')
+        } else{
+            commentService.createComment()
+        }
         event.target.reset()
     }
 
