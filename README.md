@@ -19,7 +19,7 @@ Execute:
 
 Start the application in terminal by system command: `rails s`
 
-Go to `http://127.0.0.1:3000` in your browser to view the application.
+In terminal `open index.html` to open the application in your browser.
 
 
 ## Contributing
