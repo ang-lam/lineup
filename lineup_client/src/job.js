@@ -219,7 +219,6 @@ class Job {
     }
 
     static removeJobFromAlerts = (job) => {
-        debugger
         const notClickedAlerts = Job.allForAlerts.filter(j => j.id != job.dataset.id)
         Job.allForAlerts = notClickedAlerts
     }
