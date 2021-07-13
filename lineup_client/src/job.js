@@ -143,8 +143,12 @@ class Job {
 
     static handleSubmit = () => {
         event.preventDefault()
-        jobService.createJob()
-        event.target.reset()
+        if (document.getElementById('title').value === '' || document.getElementById('company').value === '' || document.getElementById('link').value === '' || document.getElementById('status').value === ''){
+            alert('Required fields: Title, Company, Job Link, and Status')
+        } else {
+            jobService.createJob()
+            event.target.reset()
+        } 
     }
 
     // handleMouseover = () => {
