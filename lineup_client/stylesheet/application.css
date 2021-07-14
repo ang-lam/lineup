@@ -152,7 +152,6 @@ ul {
 
 /* Style the list items */
 ul li {
-  cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
   background: #eee;
