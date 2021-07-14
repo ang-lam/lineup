@@ -5,7 +5,7 @@ class Job {
     static jobForm = document.getElementById('form-container')
     static sidebar = document.getElementById('sidebar')
 
-    constructor({id, title, company, date_applied, link, status}){
+    constructor({id, title, company, date_applied, link, status, comments}){
         this.id = id
         this.title = title
         this.company = company
@@ -16,9 +16,10 @@ class Job {
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
         this.element.addEventListener('click', this.handleClick)
+
+        this.comments = comments
         // this.element.addEventListener('mouseover', this.handleMouseover)
         // this.element.addEventListener('mouseout', this.handleMouseout)
-    
         Job.all.push(this)
         Job.allForAlerts.push(this)
     }

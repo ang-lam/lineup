@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
 
-    render json: @jobs
+    render json: @jobs, include: :comments
   end
 
   # GET /jobs/1

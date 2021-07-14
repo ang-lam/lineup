@@ -31,10 +31,15 @@ class Comment{
     }
 
     static renderComments(job) {
-        const filteredComments = Comment.all.filter(comment => comment.job_id === parseInt(job.dataset.id))
-        for (const comment of filteredComments){
-            Comment.commentTable.appendChild(comment.commentHTML())
+        const targetJob = Job.all.find(j => j.id === parseInt(job.dataset.id))
+        for (const comment of targetJob.comments){
+            const c = new Comment(comment)
+            Comment.commentTable.appendChild(c.commentHTML())
         }
+        // const filteredComments = Comment.all.filter(comment => comment.job_id === parseInt(job.dataset.id))
+        // for (const comment of filteredComments){
+        //     Comment.commentTable.appendChild(comment.commentHTML())
+        // }
     }
 
     static renderForm() {

@@ -1,15 +1,24 @@
+
+
+
 const baseUrl = 'http://127.0.0.1:3000'
 const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
 const navigation = document.getElementById('navigation')
 
-Job.jobTable.addEventListener('submit', Job.handleEdit)
-Job.jobTable.addEventListener('submit', Job.handleEditSubmit)
+document.addEventListener('DOMContentLoaded', loadPage)
 
-initializeTable()
-jobService.getJobs()
-Job.renderForm()
-commentService.getComments()
+function loadPage() {
+    Job.jobTable.addEventListener('submit', Job.handleEdit)
+    Job.jobTable.addEventListener('submit', Job.handleEditSubmit)
+
+    initializeTable()
+    jobService.getJobs()
+    Job.renderForm()
+    // commentService.getComments()
+}
+
+
 
 function initializeTable() {
     Job.jobTable.innerHTML = `
