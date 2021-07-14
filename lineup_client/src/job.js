@@ -1,7 +1,4 @@
 class Job {
-    //class variable to remember objects
-    //will need to remove the elements from frontend with a method (filter and remove from array)
-    //the all array will be populated/updated with all instances at a refresh
     static all = []
     static allForAlerts = []
     static jobTable = document.getElementById('job-table')
@@ -26,7 +23,6 @@ class Job {
         Job.allForAlerts.push(this)
     }
 
-    //function is responsible for creating the HTML in each element of an instance
     jobHTML = () => {
         this.element.innerHTML = `
             <td class="title-column">${this.title}</td>
@@ -43,11 +39,6 @@ class Job {
 
     appendJob = () => {
         Job.jobTable.appendChild(this.jobHTML())
-        // this.element.addEventListener('click', this.handleClick)
-        // const titleColumn = document.getElementsByClassName('title-column')
-        // for (const job of titleColumn){
-        //     job.addEventListener('click', this.handleClick)
-        // }
     }
 
     static renderForm = () => {
@@ -150,29 +141,6 @@ class Job {
             event.target.reset()
         } 
     }
-
-    // handleMouseover = () => {
-    //     event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
-    //     const buttons = `
-    //         <button class="button" id="edit-bttn">Edit</button>
-    //         <button class="button" id="delete-bttn">Delete</button>
-    //     `
-    //     event.target.parentNode.innerHTML += buttons
-        
-        
-    // }
-
-    // handleMouseout = () => {
-    //     //remove button elements
-    //     event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
-
-    //     // const lastElement = event.target.parentNode.lastElementChild
-    //     // if (lastElement.nodeName === 'BUTTON'){
-    //     //     event.target.parentNode.lastElementChild.remove()
-    //     //     event.target.parentNode.lastElementChild.remove()
-    //     // }
-    //     event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
-    // }
 
     renderJobDetails = (job) => {
         initializeTable()
