@@ -16,8 +16,8 @@ class Job {
         this.element.dataset.id = this.id
         this.element.id =  `job-${this.id}`
         this.element.addEventListener('click', this.handleClick)
-        this.element.addEventListener('mouseover', this.handleMouseover)
-        this.element.addEventListener('mouseout', this.handleMouseout)
+        // this.element.addEventListener('mouseover', this.handleMouseover)
+        // this.element.addEventListener('mouseout', this.handleMouseout)
     
         Job.all.push(this)
         Job.allForAlerts.push(this)
@@ -30,10 +30,9 @@ class Job {
             <td>${this.date_applied}</td>
             <td>${this.link}</td>
             <td>${this.status}</td>
-            
+            <button class="button" id="edit-bttn">Edit</button>
+            <button class="button" id="delete-bttn">Delete</button>
         `
-        // <button class="button" id="edit-bttn">Edit</button>
-        //     <button class="button" id="delete-bttn">Delete</button>
         return this.element
     }
 
@@ -191,27 +190,24 @@ class Job {
         Job.allForAlerts = notClickedAlerts
     }
 
-    handleMouseover = () => {
-        event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
-        const buttons = `
-            <button class="button" id="edit-bttn">Edit</button>
-            <button class="button" id="delete-bttn">Delete</button>
-        `
-        event.target.parentNode.innerHTML += buttons
+    // handleMouseover = () => {
+    //     event.target.parentNode.removeEventListener('mouseover', this.handleMouseover)
+    //     const buttons = `
+    //         <button class="button" id="edit-bttn">Edit</button>
+    //         <button class="button" id="delete-bttn">Delete</button>
+    //     `
+    //     event.target.parentNode.innerHTML += buttons
         
         
-    }
-    handleMouseout = () => {
-        //remove button elements
-        event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
-        // const lastElement = event.target.parentNode.lastElementChild
-        // if (lastElement.nodeName === 'BUTTON'){
-        //     event.target.parentNode.lastElementChild.remove()
-        //     event.target.parentNode.lastElementChild.remove()
-        // }
-        event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
-    }
- 
-    
-
+    // }
+    // handleMouseout = () => {
+    //     //remove button elements
+    //     event.target.parentNode.querySelectorAll('.button').forEach(e => e.remove())
+    //     // const lastElement = event.target.parentNode.lastElementChild
+    //     // if (lastElement.nodeName === 'BUTTON'){
+    //     //     event.target.parentNode.lastElementChild.remove()
+    //     //     event.target.parentNode.lastElementChild.remove()
+    //     // }
+    //     event.target.parentNode.addEventListener('mouseover', this.handleMouseover)
+    // }
 }
