@@ -1,9 +1,3 @@
-//To DO LIST
-//make back button grab from all array and not do a fetch request
-//check bugs
-//refactor code
-//remove comments
-
 const baseUrl = 'http://127.0.0.1:3000'
 const jobService = new JobService(baseUrl)
 const commentService = new CommentService(baseUrl)
@@ -16,8 +10,6 @@ initializeTable()
 jobService.getJobs()
 Job.renderForm()
 commentService.getComments()
-// renderAlertBttn()
-
 
 function initializeTable() {
     Job.jobTable.innerHTML = `
@@ -32,7 +24,6 @@ function initializeTable() {
 }
  
 renderBackBttn = () => {
-
     navigation.innerHTML = `<button id="backBttn">Back to All Jobs</button>`
     navigation.firstElementChild.addEventListener('click', handleNavigation)
 }
@@ -40,7 +31,6 @@ renderBackBttn = () => {
 handleNavigation = () => {
     initializeTable()
     Job.renderAlerts(Job.allForAlerts)
-    //renderAlerts with parameter of alert array
     const filteredAll = Job.all.filter(job => job.id != this.id)
     Job.all = filteredAll
     for (const job of filteredAll) {
