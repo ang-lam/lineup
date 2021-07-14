@@ -4,15 +4,15 @@ class CommentService{
         this.endpoint = endpoint
     }
 
-    getComments() {
-        fetch(`${this.endpoint}/comments`)
-            .then(resp => resp.json()
-            .then(comments => {
-                for (const comment of comments){
-                    const c = new Comment(comment)
-                }
-        }))
-    }
+    // getComments() {
+    //     fetch(`${this.endpoint}/comments`)
+    //         .then(resp => resp.json()
+    //         .then(comments => {
+    //             for (const comment of comments){
+    //                 const c = new Comment(comment)
+    //             }
+    //     }))
+    // }
 
     configComment = () => {
         const comment = {
