@@ -40,7 +40,7 @@ class Comment{
     static renderForm() {
         Comment.commentForm.innerHTML = `
         <form id="new-comment-form">
-                Description: <textarea id="description"></textarea>
+                Comment:<br> <textarea id="description"></textarea>
                 <input type="submit" id="submit">
         </form>
         `

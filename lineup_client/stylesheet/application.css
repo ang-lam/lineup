@@ -93,6 +93,8 @@ input[type=submit] {
 #form-container {
   grid-column: 1 / 4;
   grid-row: 3;
+  text-align: center;
+  margin: auto;
 }
 
 #job-container {
